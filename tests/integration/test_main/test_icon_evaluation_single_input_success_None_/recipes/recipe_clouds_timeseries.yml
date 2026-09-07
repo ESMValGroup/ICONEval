@@ -291,6 +291,11 @@ timeseries_plot:
       linewidth: 1.25
       zorder: 2.5
       color: C0
+    input:
+      label: '{dataset} ({exp})'
+      linewidth: 1.25
+      zorder: 2.5
+      color: C0
     ICON_ICON:
       label: '{dataset} ({exp})'
       linewidth: 1.25
@@ -790,6 +795,11 @@ diagnostics:
                 zorder: 2.5
                 color: C0
               ICON_input:
+                label: '{dataset} ({exp})'
+                linewidth: 1.25
+                zorder: 2.5
+                color: C0
+              input:
                 label: '{dataset} ({exp})'
                 linewidth: 1.25
                 zorder: 2.5

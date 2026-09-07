@@ -55,6 +55,7 @@ variable_vs_lat_plot:
       zorder: 2.5
       color: blue
     EMAC_input: *id001
+    input: *id001
     EMAC_EMAC: *id001
     EMAC_EMAC_input: *id001
     default:
@@ -181,6 +182,7 @@ diagnostics:
                 zorder: 2.5
                 color: blue
               EMAC_input: *id002
+              input: *id002
               EMAC_EMAC: *id002
               EMAC_EMAC_input: *id002
               default:

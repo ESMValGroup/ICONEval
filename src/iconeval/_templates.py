@@ -260,13 +260,16 @@ class RecipeTemplate(Template):
     ) -> Any:
         """Fill `{{alias_plot_kwargs}}` appropriately in recipe (in-place)."""
         # Possible aliases are:
+        # -> {dataset}
+        # -> {dataset}_{exp}
+        # -> {exp}
         # -> {project}
-        # -> {project}_{exp}
         # -> {project}_{dataset}
         # -> {project}_{dataset}_{exp}
+        # -> {project}_{exp}
         # These are determined by ESMValTool. For simplicity, we consider all
         # cases here (including dataset-specific facets and common facets).
-        aliases: dict[FacetType, str] = {}  # map alias to color
+        aliases: dict[FacetType, str] = {}  # map alias to format (color, etc.)
         for idx, simulation_info in enumerate(simulations_info):
             exp = simulation_info.guessed_facets["exp"]
             if "project" in extra_facets:
@@ -280,10 +283,13 @@ class RecipeTemplate(Template):
             color = f"C{idx}"
 
             # Avoid duplicates (always use first appearance)
+            aliases.setdefault(dataset, color)
+            aliases.setdefault(f"{dataset}_{exp}", color)
+            aliases.setdefault(exp, color)
             aliases.setdefault(project, color)
-            aliases.setdefault(f"{project}_{exp}", color)
             aliases.setdefault(f"{project}_{dataset}", color)
             aliases.setdefault(f"{project}_{dataset}_{exp}", color)
+            aliases.setdefault(f"{project}_{exp}", color)
 
         # Only replace {{alias_plot_kwargs}} if used as dictionary key
         new_obj: Any

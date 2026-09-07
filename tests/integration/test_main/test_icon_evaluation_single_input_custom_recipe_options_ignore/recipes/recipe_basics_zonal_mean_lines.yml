@@ -55,6 +55,7 @@ variable_vs_lat_plot:
       zorder: 2.5
       color: blue
     ICON_input: *id001
+    input: *id001
     ICON_ICON: *id001
     ICON_ICON_input: *id001
     default:
@@ -181,6 +182,7 @@ diagnostics:
                 zorder: 2.5
                 color: blue
               ICON_input: *id002
+              input: *id002
               ICON_ICON: *id002
               ICON_ICON_input: *id002
               default:
