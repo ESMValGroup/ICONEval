@@ -169,8 +169,8 @@ preprocessors:
   create_zonal_mean_sos:
     custom_order: true
     regrid:
-      scheme: linear
       target_grid: 2x2
+      scheme: linear
     extract_region:
       start_longitude: 0
       end_longitude: 360
@@ -186,8 +186,8 @@ preprocessors:
   create_zonal_mean_tos:
     custom_order: true
     regrid:
-      scheme: linear
       target_grid: 2x2
+      scheme: linear
     extract_region:
       start_longitude: 0
       end_longitude: 360

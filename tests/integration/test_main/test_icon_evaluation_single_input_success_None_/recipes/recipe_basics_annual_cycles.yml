@@ -265,8 +265,8 @@ preprocessors:
   create_monthly_climatology:
     custom_order: true
     regrid:
-      scheme: linear
       target_grid: 2x2
+      scheme: linear
     area_statistics:
       operator: mean
     climate_statistics:
@@ -275,8 +275,8 @@ preprocessors:
   create_monthly_climatology_pr:
     custom_order: true
     regrid:
-      scheme: linear
       target_grid: 2x2
+      scheme: linear
     area_statistics:
       operator: mean
     climate_statistics:
@@ -335,7 +335,7 @@ diagnostics:
       pr:
         mip: Amon
         preprocessor: create_monthly_climatology_pr
-        title: Precipitation
+        title: Global Mean Precipitation
         additional_datasets:
         - project: native6
           dataset: ERA5
@@ -363,7 +363,7 @@ diagnostics:
       rlut:
         mip: Amon
         preprocessor: create_monthly_climatology
-        title: TOA Outgoing Longwave Radiation
+        title: Global Mean TOA Outgoing Longwave Radiation
         additional_datasets:
         - project: OBS
           dataset: CERES-EBAF
@@ -395,7 +395,7 @@ diagnostics:
       rsdt:
         mip: Amon
         preprocessor: create_monthly_climatology
-        title: TOA Incident Shortwave Radiation
+        title: Global Mean TOA Incident Shortwave Radiation
         additional_datasets:
         - project: obs4MIPs
           dataset: CERES-EBAF-4-2-1

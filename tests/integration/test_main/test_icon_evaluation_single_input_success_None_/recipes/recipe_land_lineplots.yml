@@ -430,8 +430,8 @@ preprocessors:
   create_global_mean_monthly_climatology:
     custom_order: true
     regrid:
-      scheme: linear
       target_grid: 2x2
+      scheme: linear
     mask_landsea:
       mask_out: sea
     area_statistics:
@@ -442,8 +442,8 @@ preprocessors:
   create_global_sum_monthly_climatology:
     custom_order: true
     regrid:
-      scheme: linear
       target_grid: 2x2
+      scheme: linear
     area_statistics:
       operator: sum
     climate_statistics:
