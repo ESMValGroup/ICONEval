@@ -27,8 +27,7 @@ preprocessors:
     custom_order: true
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     mask_outside_range:
       minimum: 240.0
       maximum: 315.0
@@ -37,8 +36,7 @@ preprocessors:
     custom_order: true
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     area_statistics:
       operator: mean
     annual_statistics:
@@ -50,8 +48,7 @@ preprocessors:
     custom_order: true
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     mask_outside_range:
       minimum: 0.0
       maximum: 70.0
@@ -60,8 +57,7 @@ preprocessors:
     custom_order: true
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     area_statistics:
       operator: mean
     annual_statistics:
