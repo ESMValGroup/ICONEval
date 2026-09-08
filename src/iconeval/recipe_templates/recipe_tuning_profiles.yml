@@ -235,6 +235,7 @@ diagnostics:
         preprocessor: create_zonal_mean_profile
         title: Air Temperature
         additional_datasets: *datasets_ta
+        supplementary_variables: *supplementary_variables
     additional_datasets: *datasets_cmip6
     scripts:
       plot:

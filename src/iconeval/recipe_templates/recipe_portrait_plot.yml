@@ -107,6 +107,12 @@ datasets_tauu_ref_1: &datasets_tauu_ref_1
 datasets_ua_ref_1: &datasets_ua_ref_1
   - {project: native6, dataset: ERA5, type: reanaly, version: v1, tier: 3, timerange: 20000101/20191231, reference_for_metric: true}  # 19790101/20191231
 
+supplementary_variables: &supplementary_variables
+  - {short_name: areacella, skip: true}
+  - {short_name: areacello, skip: true}
+  - {short_name: sftlf, skip: true}
+  - {short_name: sftof, skip: true}
+
 
 datasets: "{{dataset_list}}"
 
@@ -201,6 +207,7 @@ diagnostics:
         split: ref_1
         variable: asr
         additional_datasets: *datasets_asr_ref_1
+        supplementary_variables: *supplementary_variables
       clivi_ref_1:
         short_name: clivi
         mip: Amon
@@ -208,6 +215,7 @@ diagnostics:
         split: ref_1
         variable: clivi
         additional_datasets: *datasets_clivi_ref_1
+        supplementary_variables: *supplementary_variables
       clivi_ref_2:
         short_name: clivi
         mip: Amon
@@ -215,6 +223,7 @@ diagnostics:
         split: ref_2
         variable: clivi
         additional_datasets: *datasets_clivi_ref_2
+        supplementary_variables: *supplementary_variables
       clt_ref_1:
         short_name: clt
         mip: Amon
@@ -222,6 +231,7 @@ diagnostics:
         split: ref_1
         variable: clt
         additional_datasets: *datasets_clt_ref_1
+        supplementary_variables: *supplementary_variables
       clt_ref_2:
         short_name: clt
         mip: Amon
@@ -229,6 +239,7 @@ diagnostics:
         split: ref_2
         variable: clt
         additional_datasets: *datasets_clt_ref_2
+        supplementary_variables: *supplementary_variables
       clwvi_ref_1:
         short_name: clwvi
         mip: Amon
@@ -236,6 +247,7 @@ diagnostics:
         split: ref_1
         variable: clwvi
         additional_datasets: *datasets_clwvi_ref_1
+        supplementary_variables: *supplementary_variables
       clwvi_ref_2:
         short_name: clwvi
         mip: Amon
@@ -243,6 +255,7 @@ diagnostics:
         split: ref_2
         variable: clwvi
         additional_datasets: *datasets_clwvi_ref_2
+        supplementary_variables: *supplementary_variables
       hus400_ref_1:
         short_name: hus
         mip: Amon
@@ -250,6 +263,7 @@ diagnostics:
         split: ref_1
         variable: hus400
         additional_datasets: *datasets_hus_ref_1
+        supplementary_variables: *supplementary_variables
       lwcre_ref_1:
         short_name: lwcre
         mip: Amon
@@ -259,6 +273,7 @@ diagnostics:
         split: ref_1
         variable: lwcre
         additional_datasets: *datasets_lwcre_ref_1
+        supplementary_variables: *supplementary_variables
       lwcre_ref_2:
         short_name: lwcre
         mip: Amon
@@ -268,6 +283,7 @@ diagnostics:
         split: ref_2
         variable: lwcre
         additional_datasets: *datasets_lwcre_ref_2
+        supplementary_variables: *supplementary_variables
       lwp_ref_1:
         short_name: lwp
         mip: Amon
@@ -276,6 +292,7 @@ diagnostics:
         split: ref_1
         variable: lwp
         additional_datasets: *datasets_lwp_ref_1
+        supplementary_variables: *supplementary_variables
       lwp_ref_2:
         short_name: lwp
         mip: Amon
@@ -284,6 +301,7 @@ diagnostics:
         split: ref_2
         variable: lwp
         additional_datasets: *datasets_lwp_ref_2
+        supplementary_variables: *supplementary_variables
       pr_ref_1:
         short_name: pr
         mip: Amon
@@ -291,6 +309,7 @@ diagnostics:
         split: ref_1
         variable: pr
         additional_datasets: *datasets_pr_ref_1
+        supplementary_variables: *supplementary_variables
       pr_ref_2:
         short_name: pr
         mip: Amon
@@ -298,6 +317,7 @@ diagnostics:
         split: ref_2
         variable: pr
         additional_datasets: *datasets_pr_ref_2
+        supplementary_variables: *supplementary_variables
       prw_ref_1:
         short_name: prw
         mip: Amon
@@ -305,6 +325,7 @@ diagnostics:
         split: ref_1
         variable: prw
         additional_datasets: *datasets_prw_ref_1
+        supplementary_variables: *supplementary_variables
       rlut_ref_1:
         short_name: rlut
         mip: Amon
@@ -312,6 +333,7 @@ diagnostics:
         split: ref_1
         variable: rlut
         additional_datasets: *datasets_rlut_ref_1
+        supplementary_variables: *supplementary_variables
       rsut_ref_1:
         short_name: rsut
         mip: Amon
@@ -319,6 +341,7 @@ diagnostics:
         split: ref_1
         variable: rsut
         additional_datasets: *datasets_rsut_ref_1
+        supplementary_variables: *supplementary_variables
       swcre_ref_1:
         short_name: swcre
         mip: Amon
@@ -328,6 +351,7 @@ diagnostics:
         split: ref_1
         variable: swcre
         additional_datasets: *datasets_swcre_ref_1
+        supplementary_variables: *supplementary_variables
       swcre_ref_2:
         short_name: swcre
         mip: Amon
@@ -337,6 +361,7 @@ diagnostics:
         split: ref_2
         variable: swcre
         additional_datasets: *datasets_swcre_ref_2
+        supplementary_variables: *supplementary_variables
       ta200_ref_1:
         short_name: ta
         mip: Amon
@@ -344,6 +369,7 @@ diagnostics:
         split: ref_1
         variable: ta200
         additional_datasets: *datasets_ta_ref_1
+        supplementary_variables: *supplementary_variables
       ta850_ref_1:
         short_name: ta
         mip: Amon
@@ -351,6 +377,7 @@ diagnostics:
         split: ref_1
         variable: ta850
         additional_datasets: *datasets_ta_ref_1
+        supplementary_variables: *supplementary_variables
       tas_ref_1:
         short_name: tas
         mip: Amon
@@ -358,6 +385,7 @@ diagnostics:
         split: ref_1
         variable: tas
         additional_datasets: *datasets_tas_ref_1
+        supplementary_variables: *supplementary_variables
       tas_ref_2:
         short_name: tas
         mip: Amon
@@ -365,6 +393,7 @@ diagnostics:
         split: ref_2
         variable: tas
         additional_datasets: *datasets_tas_ref_2
+        supplementary_variables: *supplementary_variables
       tauu_ref_1:
         short_name: tauu
         mip: Amon
@@ -372,6 +401,7 @@ diagnostics:
         split: ref_1
         variable: tauu
         additional_datasets: *datasets_tauu_ref_1
+        supplementary_variables: *supplementary_variables
       ua200_ref_1:
         short_name: ua
         mip: Amon
@@ -379,6 +409,7 @@ diagnostics:
         split: ref_1
         variable: ua200
         additional_datasets: *datasets_ua_ref_1
+        supplementary_variables: *supplementary_variables
       ua850_ref_1:
         short_name: ua
         mip: Amon
@@ -386,6 +417,7 @@ diagnostics:
         split: ref_1
         variable: ua850
         additional_datasets: *datasets_ua_ref_1
+        supplementary_variables: *supplementary_variables
     additional_datasets: *datasets_cmip6
     scripts:
       plot:

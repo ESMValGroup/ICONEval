@@ -99,6 +99,12 @@ datasets_swcre: &datasets_swcre
   - {project: OBS, dataset: ISCCP-FH, type: sat, version: v0, tier: 2, timerange: 19970101/20161231}  # 19840101/20161231
   - {project: OBS6, dataset: MERRA2, type: reanaly, version: 5.12.4, tier: 3, timerange: 20020101/20211231}  # 19800101/20220731
 
+supplementary_variables: &supplementary_variables
+  - {short_name: areacella, skip: true}
+  - {short_name: areacello, skip: true}
+  - {short_name: sftlf, skip: true}
+  - {short_name: sftof, skip: true}
+
 plot_script: &plot_script
   script: monitor/multi_datasets.py
   facet_used_for_labels: alias
@@ -218,21 +224,25 @@ diagnostics:
         preprocessor: create_zonal_mean
         title: Absorbed Shortwave Radiation
         additional_datasets: *datasets_asr
+        supplementary_variables: *supplementary_variables
       clivi:
         mip: Amon
         preprocessor: create_zonal_mean
         title: Ice Water Path
         additional_datasets: *datasets_clivi
+        supplementary_variables: *supplementary_variables
       clt:
         mip: Amon
         preprocessor: create_zonal_mean
         title: Total Cloud Cover
         additional_datasets: *datasets_clt
+        supplementary_variables: *supplementary_variables
       clwvi:
         mip: Amon
         preprocessor: create_zonal_mean
         title: Condensed Water Path
         additional_datasets: *datasets_clwvi
+        supplementary_variables: *supplementary_variables
       lwcre:
         mip: Amon
         derive: true
@@ -240,31 +250,37 @@ diagnostics:
         preprocessor: create_zonal_mean
         title: TOA Longwave Cloud Radiative Effect
         additional_datasets: *datasets_lwcre
+        supplementary_variables: *supplementary_variables
       lwp:
         mip: Amon
         derive: true
         preprocessor: create_zonal_mean
         title: Liquid Water Path
         additional_datasets: *datasets_lwp
+        supplementary_variables: *supplementary_variables
       pr:
         mip: Amon
         preprocessor: create_zonal_mean_pr
         title: Precipitation
         additional_datasets: *datasets_pr
+        supplementary_variables: *supplementary_variables
       prw:
         mip: Amon
         preprocessor: create_zonal_mean
         title: Water Vapor Path
         additional_datasets: *datasets_prw
+        supplementary_variables: *supplementary_variables
       rlut:
         mip: Amon
         preprocessor: create_zonal_mean
         title: TOA Outgoing Longwave Radiation
         additional_datasets: *datasets_rlut
+        supplementary_variables: *supplementary_variables
       rtmt:
         mip: Amon
         preprocessor: create_zonal_mean
         title: TOA Net Downward Total Radiation
+        supplementary_variables: *supplementary_variables
       swcre:
         mip: Amon
         derive: true
@@ -272,6 +288,7 @@ diagnostics:
         preprocessor: create_zonal_mean
         title: TOA Shortwave Cloud Radiative Effect
         additional_datasets: *datasets_swcre
+        supplementary_variables: *supplementary_variables
     additional_datasets: *datasets_cmip6
     scripts:
       plot:
