@@ -175,7 +175,7 @@ diagnostics:
       rsdt:
         mip: Amon
         preprocessor: create_global_annual_mean_time_series
-        title: TOA Incident Shortwave Radiation
+        title: Global Mean TOA Incident Shortwave Radiation
         additional_datasets: *datasets_rsdt
         supplementary_variables: *supplementary_variables
       rsut:
