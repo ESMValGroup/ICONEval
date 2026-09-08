@@ -871,6 +871,15 @@ diagnostics:
         force_derivation: true
         preprocessor: create_ohc_2000m_anomaly_time_series
         title: Global Ocean Heat Content Anomaly (0-2000m)
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     additional_datasets:
     - project: CMIP6
       exp: historical

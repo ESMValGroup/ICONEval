@@ -68,8 +68,7 @@ preprocessors:
     custom_order: true
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     climate_statistics:
       operator: mean
       period: full
@@ -77,8 +76,7 @@ preprocessors:
     custom_order: true
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     climate_statistics:
       operator: mean
       period: full
