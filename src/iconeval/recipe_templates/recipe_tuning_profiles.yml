@@ -131,7 +131,7 @@ preprocessors:
       coordinate: air_pressure
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     extract_region:
       start_longitude: 0.
       end_longitude: 360.
@@ -151,7 +151,7 @@ preprocessors:
       coordinate: air_pressure
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     extract_region:
       start_longitude: 0.
       end_longitude: 360.
@@ -171,7 +171,7 @@ preprocessors:
       coordinate: air_pressure
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     zonal_statistics:
       operator: mean
     climate_statistics:

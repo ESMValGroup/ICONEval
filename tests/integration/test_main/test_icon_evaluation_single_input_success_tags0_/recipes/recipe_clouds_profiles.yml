@@ -96,8 +96,7 @@ preprocessors:
       coordinate: air_pressure
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     zonal_statistics:
       operator: mean
     climate_statistics:

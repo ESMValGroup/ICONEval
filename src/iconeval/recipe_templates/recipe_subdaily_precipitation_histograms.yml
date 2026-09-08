@@ -33,8 +33,7 @@ preprocessors:
     custom_order: true
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     extract_region:
       start_longitude: 0
       end_longitude: 360
