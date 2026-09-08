@@ -18,7 +18,11 @@ from iconeval._dependencies import (
 from iconeval._logging import configure_logging
 from iconeval._session import Session
 from iconeval.output_handling._summarize import get_html_description, summarize
-from iconeval.output_handling.publish_html import publish_esmvaltool_html
+from iconeval.output_handling.publish_html import (
+    _create_swift_token,
+    _valid_swift_token_available,
+    publish_esmvaltool_html,
+)
 
 if TYPE_CHECKING:
     from collections.abc import Iterable, Sequence
@@ -212,7 +216,6 @@ def icon_evaluation(
     """
     TIMES["start"] = datetime.now(UTC)
 
-    # Initialize tool
     if setup_logging:
         configure_logging(log_level, log_file=log_file)
     logger.debug("Starting ICONEval")
@@ -220,7 +223,6 @@ def icon_evaluation(
     logger.info(f"Debug log: <cyan>{log_file}</cyan>")
     logger.info("")
 
-    # Log all command line options
     logger.debug("Command line options:")
     logger.debug("---------------------")
     logger.debug(f"{'input_dirs':<35} = {input_dirs}")
@@ -264,26 +266,26 @@ def icon_evaluation(
             logger.debug(f"  {key} = {val}")
     logger.debug("")
 
-    # Verify that all dependencies are available
     esmvaltool_executable = str(esmvaltool_executable)
     srun_executable = str(srun_executable)
     verify_esmvaltool_installation(esmvaltool_executable)
     verify_slurm_installation(srun_executable)
+    if publish_html and not _valid_swift_token_available():
+        _create_swift_token()
     logger.debug("")
 
-    # Get default account if necessary
+    # If used within sbatch, the environment variable SLURM_JOB_ACCOUNT points
+    # to the account that is billed for the sbatch job
     if account is None:
         if "SLURM_JOB_ACCOUNT" in os.environ:
             account = os.environ["SLURM_JOB_ACCOUNT"]
         else:
             account = "bd1179"
 
-    # Basic setup of IO directories and files
     TIMES["start_setup"] = datetime.now(UTC)
     session = Session(input_dirs, output_dir, html_name)
     TIMES["end_setup"] = datetime.now(UTC)
 
-    # Setup jobs (i.e., recipes and configuration)
     jobs = session.get_jobs(
         recipe_template_paths=recipe_templates,
         always_use_default_recipe_templates=always_use_default_recipe_templates,
@@ -308,7 +310,6 @@ def icon_evaluation(
         logger.debug(f"  - {job.recipe.path}")
     logger.debug("")
 
-    # Run jobs
     _run_jobs(jobs, background=background)
     if background:
         TIMES["end"] = datetime.now(UTC)
@@ -318,7 +319,6 @@ def icon_evaluation(
         )
         return session.output_dir
 
-    # Create summary HTML and publish it if desired
     TIMES["start_html"] = datetime.now(UTC)
     logger.info("HTML output:")
     logger.info("------------")
@@ -331,7 +331,6 @@ def icon_evaluation(
     )
     logger.info("")
 
-    # Print summary
     TIMES["end"] = datetime.now(UTC)
     logger.debug("Ending ICONEval")
     logger.info(

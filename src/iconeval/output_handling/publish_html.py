@@ -273,7 +273,7 @@ def _read_swiftenv() -> tuple[str, str, datetime]:
 def _valid_swift_token_available() -> bool:
     """Check if valid swift token is available."""
     if not SWIFT_ENV_FILE.is_file():
-        logger.debug("No swift token available")
+        logger.info("No swift token available")
         return False
 
     (token, url, expire_dt) = _read_swiftenv()

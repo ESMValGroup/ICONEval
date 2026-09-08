@@ -180,7 +180,7 @@ def test_publish_esmvaltool_html_files_to_large(
     assert "(> 4.5 GB)" in caplog.text
 
 
-def test_publish_esmvaltool_html_force(
+def test_publish_esmvaltool_html_force_new_token(
     output_dir_regression: OutputDirRegression,
     lazy_shared_datadir: LazyDataDir,
     mocked_requests: Mock,
