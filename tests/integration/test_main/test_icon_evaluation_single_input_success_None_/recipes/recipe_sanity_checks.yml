@@ -13,6 +13,15 @@ documentation:
   authors:
   - bock_lisa
   - lauer_axel
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 plot_script:
   script: monitor/multi_datasets.py
   facet_used_for_labels: legend_label
@@ -140,25 +149,52 @@ diagnostics:
     variables:
       asr_mean:
         short_name: asr
+        mip: Amon
+        derive: true
+        force_derivation: true
         legend_label: global mean
         preprocessor: global_mean
-        derive: true
-        force_derivation: true
-        mip: Amon
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       asr_min:
         short_name: asr
+        mip: Amon
+        derive: true
+        force_derivation: true
         legend_label: global min
         preprocessor: global_min
-        derive: true
-        force_derivation: true
-        mip: Amon
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       asr_max:
         short_name: asr
-        legend_label: global max
-        preprocessor: global_max
+        mip: Amon
         derive: true
         force_derivation: true
-        mip: Amon
+        legend_label: global max
+        preprocessor: global_max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -230,16 +266,43 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       clivi_min:
         short_name: clivi
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       clivi_max:
         short_name: clivi
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -311,16 +374,43 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       clt_min:
         short_name: clt
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       clt_max:
         short_name: clt
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -392,16 +482,43 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       hfls_min:
         short_name: hfls
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       hfls_max:
         short_name: hfls
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -473,16 +590,43 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       hfss_min:
         short_name: hfss
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       hfss_max:
         short_name: hfss
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -556,6 +700,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       lwcre_min:
         short_name: lwcre
         mip: Amon
@@ -563,6 +716,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       lwcre_max:
         short_name: lwcre
         mip: Amon
@@ -570,6 +732,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -643,6 +814,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       lwp_min:
         short_name: lwp
         mip: Amon
@@ -650,6 +830,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       lwp_max:
         short_name: lwp
         mip: Amon
@@ -657,6 +846,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -730,6 +928,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       netcre_min:
         short_name: netcre
         mip: Amon
@@ -737,6 +944,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       netcre_max:
         short_name: netcre
         mip: Amon
@@ -744,6 +960,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -815,16 +1040,43 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean_pr
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       pr_min:
         short_name: pr
         mip: Amon
         preprocessor: global_min_pr
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       pr_max:
         short_name: pr
         mip: Amon
         preprocessor: global_max_pr
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -896,16 +1148,43 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       prw_min:
         short_name: prw
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       prw_max:
         short_name: prw
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -977,16 +1256,43 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       rlut_min:
         short_name: rlut
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       rlut_max:
         short_name: rlut
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -1060,6 +1366,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       rtnt_min:
         short_name: rtnt
         mip: Amon
@@ -1067,6 +1382,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       rtnt_max:
         short_name: rtnt
         mip: Amon
@@ -1074,6 +1398,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -1145,16 +1478,43 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       rsut_min:
         short_name: rsut
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       rsut_max:
         short_name: rsut
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -1228,6 +1588,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       swcre_min:
         short_name: swcre
         mip: Amon
@@ -1235,6 +1604,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       swcre_max:
         short_name: swcre
         mip: Amon
@@ -1242,6 +1620,15 @@ diagnostics:
         force_derivation: true
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -1313,16 +1700,43 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       tas_min:
         short_name: tas
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       tas_max:
         short_name: tas
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py
@@ -1394,16 +1808,43 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       tauu_min:
         short_name: tauu
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       tauu_max:
         short_name: tauu
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       timeseries:
         script: monitor/multi_datasets.py

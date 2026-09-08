@@ -26,6 +26,15 @@ datasets_tas:
   version: '1'
   tier: 3
   timerange: '*'
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 datasets:
 - supplementary_variables:
   - short_name: areacella
@@ -84,6 +93,15 @@ diagnostics:
           version: '1'
           tier: 3
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: plot_histogram.py
@@ -108,6 +126,15 @@ diagnostics:
           version: '1'
           tier: 3
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: plot_histogram.py

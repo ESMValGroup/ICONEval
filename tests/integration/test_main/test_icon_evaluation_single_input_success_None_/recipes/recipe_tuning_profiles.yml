@@ -645,6 +645,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: ERA5
           timerange: 20010101/20201231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     additional_datasets:
     - project: CMIP6
       dataset: '*'

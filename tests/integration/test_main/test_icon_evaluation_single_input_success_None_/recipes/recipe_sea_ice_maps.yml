@@ -30,6 +30,15 @@ datasets_siconc_sh:
   reference_for_monitor_diags: true
   alias: OSI-450-sh
   timerange: '*'
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 plot_script:
   script: monitor/multi_datasets.py
   facet_used_for_labels: alias
@@ -214,6 +223,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: OSI-450-nh
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       siconc_feb:
         short_name: siconc
         mip: SImon
@@ -229,6 +247,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: OSI-450-nh
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       siconc_sep:
         short_name: siconc
         mip: SImon
@@ -244,6 +271,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: OSI-450-nh
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -295,6 +331,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: OSI-450-sh
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       siconc_feb:
         short_name: siconc
         mip: SImon
@@ -310,6 +355,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: OSI-450-sh
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       siconc_sep:
         short_name: siconc
         mip: SImon
@@ -325,6 +379,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: OSI-450-sh
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py

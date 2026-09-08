@@ -332,6 +332,15 @@ datasets_swcre:
   reference_for_monitor_diags: true
   alias: MultiObsMean
   timerange: 20020101/20211231
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 plot_script:
   script: monitor/multi_datasets.py
   facet_used_for_labels: alias
@@ -457,6 +466,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: MultiObsMean
           timerange: 20030101/20181231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -538,6 +556,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: MultiObsMean
           timerange: 19970101/20161231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -619,6 +646,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: MultiObsMean
           timerange: 20030101/20181231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -694,6 +730,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: MultiObsMean
           timerange: 20020101/20211231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -772,6 +817,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: MultiObsMean
           timerange: 20030101/20181231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -837,6 +891,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: MultiObsMean
           timerange: 20020101/20211231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -904,6 +967,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: MultiObsMean
           timerange: 20020101/20211231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py

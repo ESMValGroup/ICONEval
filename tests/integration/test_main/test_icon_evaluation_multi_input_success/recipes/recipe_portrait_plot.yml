@@ -225,6 +225,15 @@ datasets_ua_ref_1:
   tier: 3
   timerange: 20000101/20191231
   reference_for_metric: true
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 datasets:
 - supplementary_variables:
   - short_name: areacella
@@ -344,6 +353,15 @@ diagnostics:
           tier: 2
           timerange: 20030101/20221231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       clivi_ref_1:
         short_name: clivi
         mip: Amon
@@ -358,6 +376,15 @@ diagnostics:
           tier: 2
           timerange: 19970101/20161231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       clivi_ref_2:
         short_name: clivi
         mip: Amon
@@ -372,6 +399,15 @@ diagnostics:
           tier: 3
           timerange: 20030101/20181231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       clt_ref_1:
         short_name: clt
         mip: Amon
@@ -386,6 +422,15 @@ diagnostics:
           tier: 2
           timerange: 19970101/20161231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       clt_ref_2:
         short_name: clt
         mip: Amon
@@ -400,6 +445,15 @@ diagnostics:
           tier: 2
           timerange: 19970101/20161231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       clwvi_ref_1:
         short_name: clwvi
         mip: Amon
@@ -414,6 +468,15 @@ diagnostics:
           tier: 2
           timerange: 19970101/20161231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       clwvi_ref_2:
         short_name: clwvi
         mip: Amon
@@ -428,6 +491,15 @@ diagnostics:
           tier: 3
           timerange: 20030101/20181231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       hus400_ref_1:
         short_name: hus
         mip: Amon
@@ -442,6 +514,15 @@ diagnostics:
           tier: 3
           timerange: 20000101/20191231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       lwcre_ref_1:
         short_name: lwcre
         mip: Amon
@@ -458,6 +539,15 @@ diagnostics:
           tier: 2
           timerange: 20030101/20221231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       lwcre_ref_2:
         short_name: lwcre
         mip: Amon
@@ -474,6 +564,15 @@ diagnostics:
           tier: 2
           timerange: 19970101/20161231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       lwp_ref_1:
         short_name: lwp
         mip: Amon
@@ -489,6 +588,15 @@ diagnostics:
           tier: 2
           timerange: 19970101/20161231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       lwp_ref_2:
         short_name: lwp
         mip: Amon
@@ -504,6 +612,15 @@ diagnostics:
           tier: 3
           timerange: 20030101/20181231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       pr_ref_1:
         short_name: pr
         mip: Amon
@@ -518,6 +635,15 @@ diagnostics:
           tier: 2
           timerange: 20030101/20221231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       pr_ref_2:
         short_name: pr
         mip: Amon
@@ -532,6 +658,15 @@ diagnostics:
           tier: 3
           timerange: 20000101/20191231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       prw_ref_1:
         short_name: prw
         mip: Amon
@@ -546,6 +681,15 @@ diagnostics:
           tier: 3
           timerange: 20030101/20171231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       rlut_ref_1:
         short_name: rlut
         mip: Amon
@@ -560,6 +704,15 @@ diagnostics:
           tier: 2
           timerange: 20030101/20221231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       rsut_ref_1:
         short_name: rsut
         mip: Amon
@@ -574,6 +727,15 @@ diagnostics:
           tier: 2
           timerange: 20030101/20221231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       swcre_ref_1:
         short_name: swcre
         mip: Amon
@@ -590,6 +752,15 @@ diagnostics:
           tier: 2
           timerange: 20030101/20221231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       swcre_ref_2:
         short_name: swcre
         mip: Amon
@@ -606,6 +777,15 @@ diagnostics:
           tier: 2
           timerange: 19970101/20161231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       ta200_ref_1:
         short_name: ta
         mip: Amon
@@ -620,6 +800,15 @@ diagnostics:
           tier: 3
           timerange: 20000101/20191231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       ta850_ref_1:
         short_name: ta
         mip: Amon
@@ -634,6 +823,15 @@ diagnostics:
           tier: 3
           timerange: 20000101/20191231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       tas_ref_1:
         short_name: tas
         mip: Amon
@@ -648,6 +846,15 @@ diagnostics:
           tier: 2
           timerange: 20020101/20211231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       tas_ref_2:
         short_name: tas
         mip: Amon
@@ -662,6 +869,15 @@ diagnostics:
           tier: 3
           timerange: 20000101/20191231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       tauu_ref_1:
         short_name: tauu
         mip: Amon
@@ -676,6 +892,15 @@ diagnostics:
           tier: 3
           timerange: 20000101/20191231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       ua200_ref_1:
         short_name: ua
         mip: Amon
@@ -690,6 +915,15 @@ diagnostics:
           tier: 3
           timerange: 20000101/20191231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       ua850_ref_1:
         short_name: ua
         mip: Amon
@@ -704,6 +938,15 @@ diagnostics:
           tier: 3
           timerange: 20000101/20191231
           reference_for_metric: true
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     additional_datasets:
     - project: CMIP6
       dataset: '*'

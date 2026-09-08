@@ -50,6 +50,15 @@ datasets_ts:
   reference_for_monitor_diags: true
   alias: ERA5
   timerange: 20020101/20211231
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 plot_script:
   script: monitor/multi_datasets.py
   facet_used_for_labels: alias
@@ -138,6 +147,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: ERA5
           timerange: 20020101/20211231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -180,6 +198,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: MTE
           timerange: 19920101/20111231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -223,6 +250,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: LAI3g
           timerange: 19990101/20181231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -264,6 +300,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: ERA5
           timerange: 20020101/20211231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
