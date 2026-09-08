@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 import re
+from textwrap import dedent
 from typing import TYPE_CHECKING
 from unittest.mock import call, sentinel
 
@@ -237,10 +238,10 @@ def test_icon_evaluation_multi_input_success(
         )
 
     mocked_requests.get.assert_not_called()
-    mocked_swift_head_account.assert_called_once_with(
-        "url/to/swift_storage/my_folder",
-        "this_is_a_very_nice_token",
-    )
+    assert mocked_swift_head_account.mock_calls == [
+        call("url/to/swift_storage/my_folder", "this_is_a_very_nice_token"),
+        call("url/to/swift_storage/my_folder", "this_is_a_very_nice_token"),
+    ]
     mocked_swift_service.assert_any_call(
         {
             "os_auth_token": "this_is_a_very_nice_token",
@@ -374,6 +375,7 @@ def test_icon_evaluation_single_input_fail(
     tmp_input_dir: Path,
     tmp_output_dir: Path,
     recipe_template_dir: Path,
+    temporary_swiftenv: Path,
     mocked_requests: Mock,
     mocked_subprocess__dependencies: Mock,
     mocked_subprocess__job: Mock,
@@ -381,6 +383,19 @@ def test_icon_evaluation_single_input_fail(
     mocked_swift_service: Mock,
     caplog: pytest.LogCaptureFixture,
 ) -> None:
+    # Force creating new token by using expired token
+    swiftenv_contents = dedent(
+        """\
+        #token expires on: Thu 01. Jan 01:00:42 UTC 1970
+        setenv OS_AUTH_TOKEN this_is_a_very_nice_token
+        setenv OS_STORAGE_URL url/to/swift_storage/my_folder
+        setenv OS_AUTH_URL " "
+        setenv OS_USERNAME " "
+        setenv OS_PASSWORD " "
+        """,
+    )
+    temporary_swiftenv.write_text(swiftenv_contents, encoding="utf-8")
+
     mocked_subprocess__job.Popen.return_value.returncode = 42
     mocked_subprocess__job.Popen.return_value.poll.return_value = 42
 
@@ -447,15 +462,25 @@ def test_icon_evaluation_single_input_fail(
             env=env,
         )
 
-    mocked_requests.get.assert_not_called()
-    mocked_swift_head_account.assert_called_once_with(
-        "url/to/swift_storage/my_folder",
-        "this_is_a_very_nice_token",
+    request_call = call(
+        "url/to/swift_storage/auth/v1.0",
+        headers={
+            "X-Auth-User": "user input:user input",
+            "X-Auth-Key": "super secret password",
+        },
+        timeout=30,
     )
+    assert mocked_requests.get.mock_calls == [
+        request_call,
+        call().raise_for_status(),
+        request_call,
+        call().raise_for_status(),
+    ]
+    mocked_swift_head_account.assert_not_called()
     mocked_swift_service.assert_any_call(
         {
-            "os_auth_token": "this_is_a_very_nice_token",
-            "os_storage_url": "url/to/swift_storage/my_folder",
+            "os_auth_token": "my-x-auth-token",
+            "os_storage_url": "my-x-storage-url",
         },
     )
     mocked_service_instance = mocked_swift_service.return_value.__enter__.return_value
