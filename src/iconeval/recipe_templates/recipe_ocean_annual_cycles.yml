@@ -168,22 +168,20 @@ diagnostics:
         mip: Omon
         preprocessor: create_monthly_climatology_labrador_sea
         title: Mixed Layer Depth for Labrador Sea
-        additional_datasets: *datasets_cmip6
         supplementary_variables: *supplementary_variables
       mlotst_southern_ocean:
         short_name: mlotst
         mip: Omon
         preprocessor: create_monthly_climatology_southern_ocean
         title: Mixed Layer Depth for Southern Ocean
-        additional_datasets: *datasets_cmip6
         supplementary_variables: *supplementary_variables
       mlotst_weddell_sea:
         short_name: mlotst
         mip: Omon
         preprocessor: create_monthly_climatology_weddell_sea
         title: Mixed Layer Depth for Weddell Sea
-        additional_datasets: *datasets_cmip6
         supplementary_variables: *supplementary_variables
+    additional_datasets: *datasets_cmip6
     scripts:
       plot:
         <<: *plot_script

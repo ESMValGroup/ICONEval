@@ -468,8 +468,8 @@ preprocessors:
   create_zonal_mean:
     custom_order: true
     regrid:
-      scheme: linear
       target_grid: 2x2
+      scheme: linear
     zonal_statistics:
       operator: mean
     climate_statistics:
@@ -478,8 +478,8 @@ preprocessors:
   create_zonal_mean_pr:
     custom_order: true
     regrid:
-      scheme: linear
       target_grid: 2x2
+      scheme: linear
     zonal_statistics:
       operator: mean
     climate_statistics:

@@ -282,109 +282,6 @@ diagnostics:
         mip: Omon
         preprocessor: create_monthly_climatology_labrador_sea
         title: Mixed Layer Depth for Labrador Sea
-        additional_datasets:
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: ACCESS-CM2
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: ACCESS-ESM1-5
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CAMS-CSM1-0
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CanESM5
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CESM2-WACCM-FV2
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CESM2-WACCM
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CESM2
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: EC-Earth3
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f3
-          grid: gn
-          timerange: '*'
-          dataset: HadGEM3-GC31-LL
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: ICON-ESM-LR
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: IPSL-CM6A-LR
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MIROC6
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MPI-ESM-1-2-HAM
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MPI-ESM1-2-HR
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MPI-ESM1-2-LR
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MRI-ESM2-0
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f2
-          grid: gn
-          timerange: '*'
-          dataset: UKESM1-0-LL
         supplementary_variables:
         - short_name: areacella
           skip: true
@@ -399,109 +296,6 @@ diagnostics:
         mip: Omon
         preprocessor: create_monthly_climatology_southern_ocean
         title: Mixed Layer Depth for Southern Ocean
-        additional_datasets:
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: ACCESS-CM2
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: ACCESS-ESM1-5
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CAMS-CSM1-0
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CanESM5
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CESM2-WACCM-FV2
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CESM2-WACCM
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CESM2
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: EC-Earth3
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f3
-          grid: gn
-          timerange: '*'
-          dataset: HadGEM3-GC31-LL
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: ICON-ESM-LR
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: IPSL-CM6A-LR
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MIROC6
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MPI-ESM-1-2-HAM
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MPI-ESM1-2-HR
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MPI-ESM1-2-LR
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MRI-ESM2-0
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f2
-          grid: gn
-          timerange: '*'
-          dataset: UKESM1-0-LL
         supplementary_variables:
         - short_name: areacella
           skip: true
@@ -516,109 +310,6 @@ diagnostics:
         mip: Omon
         preprocessor: create_monthly_climatology_weddell_sea
         title: Mixed Layer Depth for Weddell Sea
-        additional_datasets:
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: ACCESS-CM2
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: ACCESS-ESM1-5
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CAMS-CSM1-0
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CanESM5
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CESM2-WACCM-FV2
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CESM2-WACCM
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: CESM2
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: EC-Earth3
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f3
-          grid: gn
-          timerange: '*'
-          dataset: HadGEM3-GC31-LL
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: ICON-ESM-LR
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: IPSL-CM6A-LR
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MIROC6
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MPI-ESM-1-2-HAM
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MPI-ESM1-2-HR
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MPI-ESM1-2-LR
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f1
-          grid: gn
-          timerange: '*'
-          dataset: MRI-ESM2-0
-        - project: CMIP6
-          exp: historical
-          ensemble: r1i1p1f2
-          grid: gn
-          timerange: '*'
-          dataset: UKESM1-0-LL
         supplementary_variables:
         - short_name: areacella
           skip: true
@@ -628,6 +319,109 @@ diagnostics:
           skip: true
         - short_name: sftof
           skip: true
+    additional_datasets:
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: ACCESS-CM2
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: ACCESS-ESM1-5
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: CAMS-CSM1-0
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: CanESM5
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: CESM2-WACCM-FV2
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: CESM2-WACCM
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: CESM2
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: EC-Earth3
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f3
+      grid: gn
+      timerange: '*'
+      dataset: HadGEM3-GC31-LL
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: ICON-ESM-LR
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: IPSL-CM6A-LR
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: MIROC6
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: MPI-ESM-1-2-HAM
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: MPI-ESM1-2-HR
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: MPI-ESM1-2-LR
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f1
+      grid: gn
+      timerange: '*'
+      dataset: MRI-ESM2-0
+    - project: CMIP6
+      exp: historical
+      ensemble: r1i1p1f2
+      grid: gn
+      timerange: '*'
+      dataset: UKESM1-0-LL
     scripts:
       plot:
         script: monitor/multi_datasets.py

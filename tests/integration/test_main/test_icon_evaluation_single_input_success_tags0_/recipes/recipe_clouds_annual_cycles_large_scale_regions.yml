@@ -1070,6 +1070,8 @@ diagnostics:
           skip: true
       clwvi:
         mip: Amon
+        preprocessor: create_monthly_climatology_tropics
+        title: Condensed Water Path (Tropics; 30S-30N)
         additional_datasets:
         - project: OBS
           dataset: CLARA-AVHRR
@@ -1107,8 +1109,6 @@ diagnostics:
           version: MYD08-M3
           tier: 3
           timerange: 20030101/20181231
-        preprocessor: create_monthly_climatology_tropics
-        title: Condensed Water Path (Tropics; 30S-30N)
         supplementary_variables:
         - short_name: areacella
           skip: true

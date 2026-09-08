@@ -385,7 +385,7 @@ diagnostics:
       rsdt:
         mip: Amon
         preprocessor: create_global_annual_mean_time_series
-        title: TOA Incident Shortwave Radiation
+        title: Global Mean TOA Incident Shortwave Radiation
         additional_datasets:
         - project: obs4MIPs
           dataset: CERES-EBAF-4-2-1

@@ -59,9 +59,9 @@ preprocessors:
   global_annual_mean_prw_anomaly:
     custom_order: true
     regrid:
+      target_grid: 2x2
       scheme:
         reference: esmf_regrid.schemes:ESMFAreaWeighted
-      target_grid: 2x2
     area_statistics:
       operator: mean
     annual_statistics:

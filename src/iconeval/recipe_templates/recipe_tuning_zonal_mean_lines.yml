@@ -179,8 +179,8 @@ preprocessors:
   create_zonal_mean:
     custom_order: true
     regrid:
-      scheme: linear  # some models do not work with ESMFAreaWeighted
       target_grid: 2x2
+      scheme: linear  # some models do not work with ESMFAreaWeighted
     zonal_statistics:
       operator: mean
     climate_statistics:
@@ -190,8 +190,8 @@ preprocessors:
   create_zonal_mean_pr:
     custom_order: true
     regrid:
-      scheme: linear  # some models do not work with ESMFAreaWeighted
       target_grid: 2x2
+      scheme: linear  # some models do not work with ESMFAreaWeighted
     zonal_statistics:
       operator: mean
     climate_statistics:

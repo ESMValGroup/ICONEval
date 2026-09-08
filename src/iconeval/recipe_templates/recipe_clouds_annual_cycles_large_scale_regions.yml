@@ -313,9 +313,9 @@ diagnostics:
         supplementary_variables: *supplementary_variables
       clwvi:
         mip: Amon
-        additional_datasets: *datasets_clwvi
         preprocessor: create_monthly_climatology_tropics
         title: Condensed Water Path (Tropics; 30S-30N)
+        additional_datasets: *datasets_clwvi
         supplementary_variables: *supplementary_variables
       lwcre:
         mip: Amon
