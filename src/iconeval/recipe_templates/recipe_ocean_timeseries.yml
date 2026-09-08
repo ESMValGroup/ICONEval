@@ -59,7 +59,6 @@ datasets_tos: &datasets_tos
   - {project: OBS, dataset: HadISST, type: reanaly, version: "1", tier: 2, timerange: 19790101/20211231}  # 18700101/20211231
   - {project: OBS6, dataset: NOAA-ERSSTv5, type: reanaly, version: v5, tier: 2, timerange: 19790101/20201231}  # 18540101/20201231
 
-
 supplementary_variables: &supplementary_variables
   - {short_name: areacella, skip: true}
   - {short_name: areacello, skip: true}
