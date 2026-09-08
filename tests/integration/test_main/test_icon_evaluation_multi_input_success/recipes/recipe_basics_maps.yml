@@ -31,6 +31,15 @@ datasets_pr:
   reference_for_monitor_diags: true
   alias: GPCP-SG
   timerange: 19990101/20000101
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 plot_script:
   script: monitor/multi_datasets.py
   facet_used_for_labels: alias
@@ -121,6 +130,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: ERA5
           timerange: 19990101/20000101
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -162,6 +180,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: GPCP-SG
           timerange: 19990101/20000101
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py

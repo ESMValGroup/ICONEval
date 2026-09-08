@@ -22,6 +22,12 @@ datasets_tas: &datasets_tas
 datasets_pr: &datasets_pr
   - {project: OBS, dataset: GPCP-SG, type: atmos, version: 2.3, tier: 2, reference_for_monitor_diags: true, alias: GPCP-SG, timerange: "{{timerange}}"}  # 19790101/20230430
 
+supplementary_variables: &supplementary_variables
+  - {short_name: areacella, skip: true}
+  - {short_name: areacello, skip: true}
+  - {short_name: sftlf, skip: true}
+  - {short_name: sftof, skip: true}
+
 plot_script: &plot_script
   script: monitor/multi_datasets.py
   facet_used_for_labels: alias
@@ -86,6 +92,7 @@ diagnostics:
         preprocessor: create_map
         title: Near-Surface Air Temperature
         additional_datasets: *datasets_tas
+        supplementary_variables: *supplementary_variables
     scripts:
       plot:
         <<: *plot_script
@@ -105,6 +112,7 @@ diagnostics:
         preprocessor: create_map_pr
         title: Precipitation
         additional_datasets: *datasets_pr
+        supplementary_variables: *supplementary_variables
     scripts:
       plot:
         <<: *plot_script

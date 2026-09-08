@@ -26,6 +26,12 @@ datasets_ta: &datasets_ta
 datasets_ua: &datasets_ua
   - {project: native6, dataset: ERA5, type: reanaly, version: v1, tier: 3, reference_for_monitor_diags: true, alias: ERA5, timerange: "{{timerange}}"}  # 19790101/20201231
 
+supplementary_variables: &supplementary_variables
+  - {short_name: areacella, skip: true}
+  - {short_name: areacello, skip: true}
+  - {short_name: sftlf, skip: true}
+  - {short_name: sftof, skip: true}
+
 plot_script: &plot_script
   script: monitor/multi_datasets.py
   facet_used_for_labels: alias
@@ -80,6 +86,7 @@ diagnostics:
         preprocessor: create_zonal_mean_profile
         title: Specific Humidity
         additional_datasets: *datasets_hus
+        supplementary_variables: *supplementary_variables
     scripts:
       plot:
         <<: *plot_script
@@ -106,6 +113,7 @@ diagnostics:
         preprocessor: create_zonal_mean_profile
         title: Air Temperature
         additional_datasets: *datasets_ta
+        supplementary_variables: *supplementary_variables
     scripts:
       plot:
         <<: *plot_script
@@ -125,6 +133,7 @@ diagnostics:
         preprocessor: create_zonal_mean_profile
         title: Eastward Wind
         additional_datasets: *datasets_ua
+        supplementary_variables: *supplementary_variables
     scripts:
       plot:
         <<: *plot_script

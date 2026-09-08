@@ -19,6 +19,15 @@ datasets_pr:
   frequency: 1hr
   tier: 3
   timerange: '*'
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 datasets:
 - supplementary_variables:
   - short_name: areacella
@@ -74,6 +83,15 @@ diagnostics:
           frequency: 1hr
           tier: 3
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: plot_histogram.py

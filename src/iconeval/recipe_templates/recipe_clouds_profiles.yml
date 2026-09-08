@@ -34,6 +34,12 @@ datasets_clw: &datasets_clw
 datasets_cli: &datasets_cli
   - {project: OBS, dataset: CALIPSO-ICECLOUD, type: sat, version: 1-00, tier: 3, reference_for_monitor_diags: true, alias: CALIPSO-ICECLOUD, timerange: 20070101/20151231}  # 20070101/20151231
 
+supplementary_variables: &supplementary_variables
+  - {short_name: areacella, skip: true}
+  - {short_name: areacello, skip: true}
+  - {short_name: sftlf, skip: true}
+  - {short_name: sftof, skip: true}
+
 plot_script: &plot_script
   script: monitor/multi_datasets.py
   facet_used_for_labels: alias
@@ -89,6 +95,7 @@ diagnostics:
         preprocessor: create_zonal_mean_profile
         title: Cloud Cover
         additional_datasets: *datasets_cl
+        supplementary_variables: *supplementary_variables
     scripts:
       plot:
         <<: *plot_script
@@ -108,6 +115,7 @@ diagnostics:
         preprocessor: create_zonal_mean_profile
         title: Mass Fraction of Cloud Ice
         additional_datasets: *datasets_cli
+        supplementary_variables: *supplementary_variables
     scripts:
       plot:
         <<: *plot_script
@@ -127,6 +135,7 @@ diagnostics:
         preprocessor: create_zonal_mean_profile
         title: Mass Fraction of Cloud Liquid Water
         additional_datasets: *datasets_clw
+        supplementary_variables: *supplementary_variables
     scripts:
       plot:
         <<: *plot_script

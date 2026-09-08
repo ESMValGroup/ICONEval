@@ -54,6 +54,15 @@ datasets_sos:
   version: '2018'
   tier: 2
   timerange: 20000101/20001231
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 plot_script:
   script: monitor/multi_datasets.py
   facet_used_for_labels: alias
@@ -219,6 +228,15 @@ diagnostics:
           version: '2018'
           tier: 2
           timerange: 20000101/20001231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -355,6 +373,15 @@ diagnostics:
           version: '2018'
           tier: 2
           timerange: 20000101/20001231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     additional_datasets:
     - project: CMIP6
       dataset: '*'

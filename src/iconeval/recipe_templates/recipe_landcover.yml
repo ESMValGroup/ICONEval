@@ -21,6 +21,12 @@ documentation:
 datasets_obs: &datasets_obs
   - {project: OBS, dataset: ESACCI-LANDCOVER, type: sat, version: L4-LCCS-Map-300m-P5Y-aggregated-0.500000Deg, tier: 2, timerange: 19980101/20121231}  # 19980101/20121231
 
+supplementary_variables: &supplementary_variables
+  - {short_name: areacella, skip: true}
+  - {short_name: areacello, skip: true}
+  - {short_name: sftlf, skip: true}
+  - {short_name: sftof, skip: true}
+
 
 datasets: "{{dataset_list}}"
 
@@ -47,22 +53,27 @@ diagnostics:
         mip: Lmon
         preprocessor: regrid
         reference_dataset: ESACCI-LANDCOVER
+        supplementary_variables: *supplementary_variables
       grassFrac:
         mip: Lmon
         preprocessor: regrid
         reference_dataset: ESACCI-LANDCOVER
+        supplementary_variables: *supplementary_variables
       treeFrac:
         mip: Lmon
         preprocessor: regrid
         reference_dataset: ESACCI-LANDCOVER
+        supplementary_variables: *supplementary_variables
       shrubFrac:
         mip: Lmon
         preprocessor: regrid
         reference_dataset: ESACCI-LANDCOVER
+        supplementary_variables: *supplementary_variables
       cropFrac:
         mip: Lmon
         preprocessor: regrid
         reference_dataset: ESACCI-LANDCOVER
+        supplementary_variables: *supplementary_variables
     additional_datasets: *datasets_obs
     scripts:
       landcover:

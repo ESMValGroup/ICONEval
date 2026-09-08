@@ -19,6 +19,12 @@ datasets_siconc_nh: &datasets_siconc_nh
 datasets_siconc_sh: &datasets_siconc_sh
   - {project: OBS, dataset: OSI-450-sh, type: reanaly, version: v3, tier: 2, mip: OImon, reference_for_monitor_diags: true, alias: OSI-450-sh, timerange: "{{timerange}}"}  # 19790101/20201231
 
+supplementary_variables: &supplementary_variables
+  - {short_name: areacella, skip: true}
+  - {short_name: areacello, skip: true}
+  - {short_name: sftlf, skip: true}
+  - {short_name: sftof, skip: true}
+
 plot_script: &plot_script
   script: monitor/multi_datasets.py
   facet_used_for_labels: alias
@@ -189,18 +195,21 @@ diagnostics:
         title: Sea-Ice Area Percentage
         preprocessor: create_map_nh
         additional_datasets: *datasets_siconc_nh
+        supplementary_variables: *supplementary_variables
       siconc_feb:
         short_name: siconc
         mip: SImon
         title: Sea-Ice Area Percentage in February
         preprocessor: create_map_nh_feb
         additional_datasets: *datasets_siconc_nh
+        supplementary_variables: *supplementary_variables
       siconc_sep:
         short_name: siconc
         mip: SImon
         title: Sea-Ice Area Percentage in September
         preprocessor: create_map_nh_sep
         additional_datasets: *datasets_siconc_nh
+        supplementary_variables: *supplementary_variables
     scripts:
       plot:
         <<: *plot_script
@@ -220,18 +229,21 @@ diagnostics:
         title: Sea-Ice Area Percentage
         preprocessor: create_map_sh
         additional_datasets: *datasets_siconc_sh
+        supplementary_variables: *supplementary_variables
       siconc_feb:
         short_name: siconc
         mip: SImon
         title: Sea-Ice Area Percentage in February
         preprocessor: create_map_sh_feb
         additional_datasets: *datasets_siconc_sh
+        supplementary_variables: *supplementary_variables
       siconc_sep:
         short_name: siconc
         mip: SImon
         title: Sea-Ice Area Percentage in September
         preprocessor: create_map_sh_sep
         additional_datasets: *datasets_siconc_sh
+        supplementary_variables: *supplementary_variables
     scripts:
       plot:
         <<: *plot_script

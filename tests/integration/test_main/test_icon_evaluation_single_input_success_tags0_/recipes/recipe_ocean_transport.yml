@@ -22,6 +22,15 @@ datasets_cmip6:
   grid: gn
   institute: '*'
   timerange: 19950101/20141231
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 plot_script:
   script: monitor/multi_datasets.py
   facet_used_for_labels: alias
@@ -160,16 +169,43 @@ diagnostics:
         mip: Omon
         preprocessor: create_atlantic_arctic_ocean_zonal_mean_hfbasin
         title: Northward Atlantic/Arctic Ocean Heat Transport
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       hfbasin_indian_pacific_ocean:
         short_name: hfbasin
         mip: Omon
         preprocessor: create_indian_pacific_ocean_zonal_mean_hfbasin
         title: Northward Indian/Pacific Ocean Heat Transport
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       hfbasin_global_ocean:
         short_name: hfbasin
         mip: Omon
         preprocessor: create_global_ocean_zonal_mean_hfbasin
         title: Northward Global Ocean Heat Transport
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     additional_datasets:
     - project: CMIP6
       dataset: '*'
