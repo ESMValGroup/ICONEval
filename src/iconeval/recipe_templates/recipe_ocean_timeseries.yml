@@ -340,6 +340,7 @@ diagnostics:
         force_derivation: true
         preprocessor: create_ohc_2000m_anomaly_time_series
         title: Global Ocean Heat Content Anomaly (0-2000m)
+        supplementary_variables: *supplementary_variables
     additional_datasets: *datasets_phcint
     scripts:
       plot:
