@@ -234,5 +234,7 @@
    This will request all memory (`--mem=0`) of a single compute node
    (`--nodes=1`, `--partition=compute`) with [128 CPUs and 256 GB of main
    memory](https://docs.dkrz.de/doc/levante/configuration.html). Since 1 recipe
-   run = 1 task and 16 CPUs per task are requested, this results in 8 (= 128 /
-   16) recipe runs in parallel.
+   run = 1 task and 16 CPUs per task are requested, this results in 8 (= 128
+   CPUs / 16 CPUs) recipe runs in parallel. This is an optimal setting for the
+   default recipes, which are designed to run effectively on 1/8 of a compute
+   node (16 CPUs, 32 GB of RAM).
