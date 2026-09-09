@@ -44,7 +44,7 @@ To run custom recipes in addition to the default recipes, use
 iconeval path/to/ICON_output --recipe_templates='["/path/to/recipe_1_*.yml", "/path/to/recipe_2.yml"]' --always_use_default_recipe_templates=True
 ```
 
-The default recipes are designed to run effectively on 1/8 of a compute on
+The default recipes are designed to run effectively on 1/8 of a compute node on
 DKRZ's Levante (16 cores, 32 GB of RAM).
 
 The following placeholders are required in the recipe templates:
