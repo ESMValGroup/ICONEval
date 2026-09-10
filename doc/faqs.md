@@ -184,7 +184,7 @@
    an `--html_name`. Please specify a `--html_name` in these cases.
 
 1. My jobs don't start with the error `FATAL: while extracting
-   /work/bd1179/iconeval/0.0.5/esmvaltool/bin/esmvaltool: root filesystem
+   /shared/bd1179/iconeval/0.0.5/esmvaltool/bin/esmvaltool: root filesystem
    extraction failed: failed to copy content in staging file: write
    /tmp/rootfs-3224830439/archive-104220727: no space left on device`.
 
