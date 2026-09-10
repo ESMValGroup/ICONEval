@@ -184,6 +184,8 @@ preprocessors:
 
   create_zonal_mean:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -195,6 +197,8 @@ preprocessors:
 
   create_zonal_mean_pr:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted

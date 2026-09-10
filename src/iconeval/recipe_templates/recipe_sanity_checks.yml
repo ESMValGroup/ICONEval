@@ -75,6 +75,8 @@ preprocessors:
 
   global_mean: &global_mean
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
@@ -82,12 +84,21 @@ preprocessors:
       operator: mean
 
   global_mean_pr:
-    <<: *global_mean
+    custom_order: true
+    align_metadata:
+      target_project: OBS6
+    regrid:
+      target_grid: 2x2
+      scheme: area_weighted
+    area_statistics:
+      operator: mean
     convert_units:
       units: mm day-1
 
-  global_min: &global_min
+  global_min:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
@@ -95,12 +106,21 @@ preprocessors:
       operator: min
 
   global_min_pr:
-    <<: *global_min
+    custom_order: true
+    align_metadata:
+      target_project: OBS6
+    regrid:
+      target_grid: 2x2
+      scheme: area_weighted
+    area_statistics:
+      operator: min
     convert_units:
       units: mm day-1
 
-  global_max: &global_max
+  global_max:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
@@ -108,7 +128,14 @@ preprocessors:
       operator: max
 
   global_max_pr:
-    <<: *global_max
+    custom_order: true
+    align_metadata:
+      target_project: OBS6
+    regrid:
+      target_grid: 2x2
+      scheme: area_weighted
+    area_statistics:
+      operator: max
     convert_units:
       units: mm day-1
 

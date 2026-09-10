@@ -266,6 +266,8 @@ datasets:
 preprocessors:
   create_rmse_surface:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -279,6 +281,8 @@ preprocessors:
       keep_reference_dataset: false
   create_rmse_200hpa:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     extract_levels:
       levels: 20000
       scheme: linear
@@ -296,6 +300,8 @@ preprocessors:
       keep_reference_dataset: false
   create_rmse_400hpa:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     extract_levels:
       levels: 40000
       scheme: linear
@@ -313,6 +319,8 @@ preprocessors:
       keep_reference_dataset: false
   create_rmse_850hpa:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     extract_levels:
       levels: 85000
       scheme: linear

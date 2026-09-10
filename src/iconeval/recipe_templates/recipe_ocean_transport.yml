@@ -84,6 +84,8 @@ preprocessors:
 
   create_atlantic_arctic_ocean_zonal_mean_hfbasin:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     extract_named_regions:
       regions: atlantic_arctic_ocean
     climate_statistics:
@@ -94,6 +96,8 @@ preprocessors:
 
   create_indian_pacific_ocean_zonal_mean_hfbasin:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     extract_named_regions:
       regions: indian_pacific_ocean
     climate_statistics:
@@ -104,6 +108,8 @@ preprocessors:
 
   create_global_ocean_zonal_mean_hfbasin:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     extract_named_regions:
       regions: global_ocean
     climate_statistics:

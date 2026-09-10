@@ -85,6 +85,8 @@ preprocessors:
 
   global_sum_anom:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
@@ -98,6 +100,8 @@ preprocessors:
 
   global_sum:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted

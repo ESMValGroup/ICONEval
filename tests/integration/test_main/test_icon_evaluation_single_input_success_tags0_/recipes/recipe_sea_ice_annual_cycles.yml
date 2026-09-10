@@ -288,6 +288,8 @@ datasets:
 preprocessors:
   create_monthly_climatology_nh:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -304,6 +306,8 @@ preprocessors:
       units: 1e6 km2
   create_monthly_climatology_sh:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear

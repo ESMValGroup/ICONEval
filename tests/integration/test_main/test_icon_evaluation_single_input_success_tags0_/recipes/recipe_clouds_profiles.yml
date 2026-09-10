@@ -88,6 +88,8 @@ datasets:
 preprocessors:
   create_zonal_mean_profile:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     extract_levels:
       levels:
         cmor_table: CMIP6

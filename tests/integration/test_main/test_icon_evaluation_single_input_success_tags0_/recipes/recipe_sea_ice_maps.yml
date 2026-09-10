@@ -105,6 +105,8 @@ datasets:
 preprocessors:
   create_map_nh:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -120,6 +122,8 @@ preprocessors:
       period: full
   create_map_nh_feb:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -137,6 +141,8 @@ preprocessors:
       period: full
   create_map_nh_sep:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -154,6 +160,8 @@ preprocessors:
       period: full
   create_map_sh:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -169,6 +177,8 @@ preprocessors:
       period: full
   create_map_sh_feb:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -186,6 +196,8 @@ preprocessors:
       period: full
   create_map_sh_sep:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear

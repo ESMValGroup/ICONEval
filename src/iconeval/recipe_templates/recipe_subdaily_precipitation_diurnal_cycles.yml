@@ -85,6 +85,8 @@ preprocessors:
 
   diurnal_cycle_tropics_ocean:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
@@ -106,6 +108,8 @@ preprocessors:
 
   diurnal_cycle_tropics_land:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
@@ -126,6 +130,8 @@ preprocessors:
 
   diurnal_cycle_north_jja_land:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
@@ -148,6 +154,8 @@ preprocessors:
 
   diurnal_cycle_south_djf_land:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
@@ -170,6 +178,8 @@ preprocessors:
 
   diurnal_cycle_map_tropics:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted

@@ -34,6 +34,8 @@ datasets:
 preprocessors:
   common_grid_tas:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
@@ -42,6 +44,8 @@ preprocessors:
       maximum: 315.0
   global_annual_mean_tas_anomaly:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
@@ -53,6 +57,8 @@ preprocessors:
       period: full
   common_grid_prw:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
@@ -61,6 +67,8 @@ preprocessors:
       maximum: 70.0
   global_annual_mean_prw_anomaly:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted

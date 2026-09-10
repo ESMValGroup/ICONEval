@@ -99,6 +99,8 @@ preprocessors:
 
   create_monthly_climatology_southern_ocean:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -119,6 +121,8 @@ preprocessors:
 
   create_monthly_climatology_labrador_sea:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -137,6 +141,8 @@ preprocessors:
 
   create_monthly_climatology_weddell_sea:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted

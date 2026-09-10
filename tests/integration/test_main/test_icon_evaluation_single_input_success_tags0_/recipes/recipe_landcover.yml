@@ -42,6 +42,9 @@ datasets:
   project: ICON
 preprocessors:
   regrid:
+    custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: ESACCI-LANDCOVER
       scheme: area_weighted

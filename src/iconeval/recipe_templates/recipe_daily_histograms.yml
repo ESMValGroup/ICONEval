@@ -35,6 +35,8 @@ preprocessors:
 
   histogram_pr:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
@@ -47,6 +49,8 @@ preprocessors:
 
   histogram_tas:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted

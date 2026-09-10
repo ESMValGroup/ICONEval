@@ -423,6 +423,8 @@ datasets:
 preprocessors:
   create_monthly_climatology_ne_pacific:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -440,6 +442,8 @@ preprocessors:
       period: month
   create_monthly_climatology_se_atlantic:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -457,6 +461,8 @@ preprocessors:
       period: month
   create_monthly_climatology_se_pacific:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear

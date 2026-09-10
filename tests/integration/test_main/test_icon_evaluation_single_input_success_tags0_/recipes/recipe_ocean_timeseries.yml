@@ -336,12 +336,17 @@ datasets:
   project: ICON
 preprocessors:
   create_amoc_time_series:
+    custom_order: true
+    align_metadata:
+      target_project: OBS6
     annual_statistics:
       operator: mean
     convert_units:
       units: Tg s-1
   create_nino34_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -362,6 +367,8 @@ preprocessors:
       operator: mean
   create_ohc_total_anomaly_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -386,6 +393,8 @@ preprocessors:
       units: ZJ
   create_ohc_300m_anomaly_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -414,6 +423,8 @@ preprocessors:
       units: ZJ
   create_ohc_2000m_anomaly_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -442,6 +453,8 @@ preprocessors:
       units: ZJ
   create_tos_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
