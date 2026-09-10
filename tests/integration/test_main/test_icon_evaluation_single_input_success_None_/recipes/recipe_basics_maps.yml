@@ -75,6 +75,8 @@ datasets:
 preprocessors:
   create_map:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
@@ -83,6 +85,8 @@ preprocessors:
       period: full
   create_map_pr:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
