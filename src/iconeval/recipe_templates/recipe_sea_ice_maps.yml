@@ -78,6 +78,8 @@ preprocessors:
 
   create_map_nh:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -94,6 +96,8 @@ preprocessors:
 
   create_map_nh_feb:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -112,6 +116,8 @@ preprocessors:
 
   create_map_nh_sep:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -130,6 +136,8 @@ preprocessors:
 
   create_map_sh:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -146,6 +154,8 @@ preprocessors:
 
   create_map_sh_feb:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -164,6 +174,8 @@ preprocessors:
 
   create_map_sh_sep:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted

@@ -134,6 +134,8 @@ preprocessors:
 
   create_global_annual_mean_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -146,6 +148,8 @@ preprocessors:
 
   create_global_sum_annual_mean_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -158,6 +162,8 @@ preprocessors:
 
   create_global_mean_monthly_climatology:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -171,6 +177,8 @@ preprocessors:
 
   create_global_sum_monthly_climatology:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted

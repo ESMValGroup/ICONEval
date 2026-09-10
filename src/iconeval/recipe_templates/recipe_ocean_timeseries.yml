@@ -126,7 +126,11 @@ datasets: "{{dataset_list}}"
 
 
 preprocessors:
+
   create_amoc_time_series:
+    custom_order: true
+    align_metadata:
+      target_project: OBS6
     annual_statistics:
       operator: mean
     convert_units:
@@ -134,6 +138,8 @@ preprocessors:
 
   create_nino34_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -155,6 +161,8 @@ preprocessors:
 
   create_ohc_total_anomaly_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -180,6 +188,8 @@ preprocessors:
 
   create_ohc_300m_anomaly_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -209,6 +219,8 @@ preprocessors:
 
   create_ohc_2000m_anomaly_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted
@@ -238,6 +250,8 @@ preprocessors:
 
   create_tos_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear  # some models do not work with area_weighted

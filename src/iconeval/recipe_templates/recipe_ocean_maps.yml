@@ -59,6 +59,8 @@ preprocessors:
 
   create_map:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
@@ -68,6 +70,8 @@ preprocessors:
 
   create_map_sos:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: area_weighted
