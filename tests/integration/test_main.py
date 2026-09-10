@@ -55,6 +55,7 @@ def test_icon_evaluation_single_input_success(
     output_dir_regression: OutputDirRegression,
     tmp_input_dir: Path,
     tmp_output_dir: Path,
+    temporary_swiftenv: Path,
     mocked_requests: Mock,
     mocked_subprocess__dependencies: Mock,
     mocked_subprocess__job: Mock,
@@ -62,6 +63,20 @@ def test_icon_evaluation_single_input_success(
     mocked_swift_service: Mock,
     caplog: pytest.LogCaptureFixture,
 ) -> None:
+    # Use an expired token. This should not be used, since publish_html=False
+    # though! This is checked via mocked_requests.get.assert_not_called().
+    swiftenv_contents = dedent(
+        """\
+        #token expires on: Thu 01. Jan 01:00:42 UTC 1970
+        setenv OS_AUTH_TOKEN this_is_a_very_nice_token
+        setenv OS_STORAGE_URL url/to/swift_storage/my_folder
+        setenv OS_AUTH_URL " "
+        setenv OS_USERNAME " "
+        setenv OS_PASSWORD " "
+        """,
+    )
+    temporary_swiftenv.write_text(swiftenv_contents, encoding="utf-8")
+
     obtained_dir = icon_evaluation(
         tmp_input_dir,
         output_dir=tmp_output_dir,
