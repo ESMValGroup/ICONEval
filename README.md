@@ -36,7 +36,7 @@ that shall be evaluated.
 On Levante, load the module via:
 
 ```bash
-module use -a /work/bd1179/modulefiles
+module use -a /shared/bd1179/modulefiles
 module load iconeval
 ```
 
@@ -115,7 +115,7 @@ is necessary.
 To load the ICONEval module on Levante, use:
 
 ```bash
-module use -a /work/bd1179/modulefiles
+module use -a /shared/bd1179/modulefiles
 module load iconeval
 ```
 
