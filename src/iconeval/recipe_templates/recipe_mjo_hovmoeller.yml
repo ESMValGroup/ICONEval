@@ -1,0 +1,88 @@
+#TAGS atmosphere
+#TAGS mjo
+#TAGS precipitation
+#TAGS hovmoeller
+#TAGS daily
+---
+documentation:
+  title: Madden-Julian Oscillation Evaluation (Hovmöller Diagrams).
+  description: >
+    Plot lag-regression Hovmöller diagrams of the Madden-Julian Oscillation
+    (MJO). For this, daily tropical precipitation is averaged over a latitude
+    band (15°S-15°N) and its day-of-year climatology is removed. The resulting
+    anomalies are Lanczos band-pass filtered to the 20-100 day MJO period
+    range. A reference index is built by averaging the filtered field over a
+    reference longitude sector (80-100°E), and the full filtered field is then
+    regressed against this index at a range of lags. The result is a longitude-lag diagram: an eastward-propagating diagonal
+    band is the signature of MJO convection.
+  authors:
+    - schoenfeld_jurij
+  references:
+    - hannah20james
+
+
+# YAML anchors for later use
+
+datasets_pr: &datasets_pr
+  - {project: OBS6, dataset: ERA5, type: reanaly, version: "1", tier: 3, timerange: "{{timerange}}"}  # 19790101/20191231
+
+supplementary_variables: &supplementary_variables
+  - {short_name: areacella, skip: true}
+  - {short_name: areacello, skip: true}
+  - {short_name: sftlf, skip: true}
+  - {short_name: sftof, skip: true}
+
+
+datasets: "{{dataset_list}}"
+
+
+preprocessors:
+  mjo_precip:
+    custom_order: true
+    align_metadata:
+      target_project: OBS6
+    regrid:
+      target_grid: 2x2
+      scheme: area_weighted
+    extract_region:
+      start_longitude: 0
+      end_longitude: 360
+      start_latitude: -15
+      end_latitude: 15
+    meridional_statistics:
+      operator: mean
+    anomalies:
+      period: day
+    convert_units:
+      units: mm day-1
+
+
+diagnostics:
+
+  mjo_hovmoeller:
+    description: Lag-regression Hovmöller diagrams of the Madden-Julian Oscillation (MJO).
+    themes:
+      - phys
+      - clouds
+    realms:
+      - atmos
+    variables:
+      pr:
+        mip: day
+        preprocessor: mjo_precip
+        additional_datasets: *datasets_pr
+        supplementary_variables: *supplementary_variables
+    scripts:
+      main:
+        script: mjo/mjo_hovmoeller.py
+        colorbar_label: Precipitation regression (mm day-1)
+        colormap: RdYlBu
+        contour_levels: 21
+        high_period: 100
+        lanczos_weights: 91
+        longitude_limits: [0.0, 360.0]
+        low_period: 20
+        max_lag: 25
+        plot_title: MJO Precipitation Hovmöller Diagram
+        reference_longitudes: [80.0, 100.0]
+        vmax: 2.0
