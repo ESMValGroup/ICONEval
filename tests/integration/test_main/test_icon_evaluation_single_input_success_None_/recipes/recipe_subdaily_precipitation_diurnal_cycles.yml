@@ -1,4 +1,3 @@
-# ESMValTool
 #DASK --memory_limit=7760MB
 #DASK --n_workers=4
 #TAGS atmosphere
@@ -15,11 +14,11 @@ documentation:
 datasets_pr:
 - project: native6
   dataset: ERA5
-  alias: ERA5
   type: reanaly
   version: v1
   frequency: 1hr
   tier: 3
+  alias: ERA5
   timerange: '*'
 supplementary_variables:
 - short_name: areacella
@@ -257,11 +256,11 @@ diagnostics:
         additional_datasets:
         - project: native6
           dataset: ERA5
-          alias: ERA5
           type: reanaly
           version: v1
           frequency: 1hr
           tier: 3
+          alias: ERA5
           timerange: '*'
         supplementary_variables:
         - short_name: areacella
@@ -280,11 +279,11 @@ diagnostics:
         additional_datasets:
         - project: native6
           dataset: ERA5
-          alias: ERA5
           type: reanaly
           version: v1
           frequency: 1hr
           tier: 3
+          alias: ERA5
           timerange: '*'
         supplementary_variables:
         - short_name: areacella
@@ -303,11 +302,11 @@ diagnostics:
         additional_datasets:
         - project: native6
           dataset: ERA5
-          alias: ERA5
           type: reanaly
           version: v1
           frequency: 1hr
           tier: 3
+          alias: ERA5
           timerange: '*'
         supplementary_variables:
         - short_name: areacella
@@ -326,11 +325,11 @@ diagnostics:
         additional_datasets:
         - project: native6
           dataset: ERA5
-          alias: ERA5
           type: reanaly
           version: v1
           frequency: 1hr
           tier: 3
+          alias: ERA5
           timerange: '*'
         supplementary_variables:
         - short_name: areacella
@@ -444,11 +443,11 @@ diagnostics:
         additional_datasets:
         - project: native6
           dataset: ERA5
-          alias: ERA5
           type: reanaly
           version: v1
           frequency: 1hr
           tier: 3
+          alias: ERA5
           timerange: '*'
         supplementary_variables:
         - short_name: areacella
