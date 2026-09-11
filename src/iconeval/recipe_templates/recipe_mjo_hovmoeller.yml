@@ -24,7 +24,7 @@ documentation:
 # YAML anchors for later use
 
 datasets_pr: &datasets_pr
-  - {project: OBS6, dataset: ERA5, type: reanaly, version: "1", tier: 3, timerange: "{{timerange}}"}  # 19790101/20191231
+  - {project: OBS6, dataset: ERA5, type: reanaly, version: "1", tier: 3, alias: ERA5, timerange: 19800101/20191231}  # 19800101/20191231
 
 supplementary_variables: &supplementary_variables
   - {short_name: areacella, skip: true}
@@ -37,6 +37,7 @@ datasets: "{{dataset_list}}"
 
 
 preprocessors:
+
   mjo_precip:
     custom_order: true
     align_metadata:
@@ -75,7 +76,7 @@ diagnostics:
     scripts:
       main:
         script: mjo/mjo_hovmoeller.py
-        colorbar_label: Precipitation regression (mm day-1)
+        colorbar_label: Precipitation regression [mm day-1]
         colormap: RdYlBu
         contour_levels: 21
         high_period: 100
