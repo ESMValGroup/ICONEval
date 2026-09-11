@@ -226,7 +226,7 @@ class RecipeTemplate(Template):
         )
 
         # Write recipe (incl. magic comments like #ESMVALTOOL)
-        recipe_content: str = "# ESMValTool\n"
+        recipe_content: str = ""
         for dask_key, dask_value in self.dask_options.items():
             recipe_content += f"{self.DASK_OPTIONS_MARKER} --{dask_key}={dask_value}\n"
         for (
