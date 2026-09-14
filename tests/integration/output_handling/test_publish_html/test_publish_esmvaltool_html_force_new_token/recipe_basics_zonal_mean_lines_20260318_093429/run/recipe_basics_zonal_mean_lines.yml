@@ -1,3 +1,8 @@
+#TAGS atmosphere
+#TAGS basics
+#TAGS precipitation
+#TAGS zonal-mean
+---
 documentation:
   title: Basic Model Evaluation (Zonal Means).
   description: Zonal mean line plots of basic physical variables of the climate system.
@@ -101,13 +106,26 @@ variable_vs_lat_plot:
       linewidth: 1.0
       zorder: 2.4
       linestyle: dotted
+datasets:
+- supplementary_variables:
+  - short_name: areacella
+    skip: true
+  - short_name: areacello
+    skip: true
+  - short_name: sftlf
+    skip: true
+  - short_name: sftof
+    skip: true
+  dataset: ICON-XPP
+  exp: historical-202510p1
+  project: ICON
+  timerange: 19790101/19990101
 preprocessors:
   create_zonal_mean_pr:
     custom_order: true
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     zonal_statistics:
       operator: mean
     climate_statistics:
@@ -115,7 +133,6 @@ preprocessors:
       period: full
     convert_units:
       units: mm day-1
-  default: {}
 diagnostics:
   zonal_means_pr:
     description: Zonal mean line plots of precipitation.
@@ -128,7 +145,21 @@ diagnostics:
         mip: Amon
         preprocessor: create_zonal_mean_pr
         title: Precipitation
-        timerange: 19790101/19990101
+        additional_datasets:
+        - project: native6
+          dataset: ERA5
+          type: reanaly
+          version: v1
+          tier: 3
+          reference_for_monitor_diags: true
+          timerange: 19790101/19990101
+        - project: OBS
+          dataset: GPCP-SG
+          type: atmos
+          version: 2.3
+          tier: 2
+          reference_for_monitor_diags: true
+          timerange: 19790101/19990101
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -213,19 +244,3 @@ diagnostics:
                 linewidth: 1.0
                 zorder: 2.4
                 linestyle: dotted
-datasets:
-- project: native6
-  dataset: ERA5
-  type: reanaly
-  version: v1
-  tier: 3
-  reference_for_monitor_diags: true
-- project: OBS
-  dataset: GPCP-SG
-  type: atmos
-  version: '2.3'
-  tier: 2
-  reference_for_monitor_diags: true
-- dataset: ICON-XPP
-  exp: historical-202510p1
-  project: ICON

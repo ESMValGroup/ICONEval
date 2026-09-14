@@ -1,8 +1,7 @@
 ---
 name: Run tests
 
-permissions:
-  contents: read
+permissions: {}
 
 on:
   push:
@@ -29,6 +28,7 @@ jobs:
         environment:
           - test-py312
           - test-py313
+          - test-py314
     name: ${{ matrix.os }} ${{ matrix.environment }}
     steps:
       - name: Checkout code
@@ -37,7 +37,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Setup environment
-        uses: prefix-dev/setup-pixi@f00437f565399d418b0acc85936d12c1fb668347 # v0.10.1
+        uses: prefix-dev/setup-pixi@d3f436a425481402e6a95a1d1fc10331c708cd9e # v0.10.2
         with:
           frozen: true
           environments: ${{ matrix.environment }}

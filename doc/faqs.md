@@ -9,23 +9,23 @@
    [By default](https://docs.esmvaltool.org/projects/ESMValCore/en/latest/quickstart/find_data.html#icon),
    ESMValTool will search for files using the following patterns:
 
-   - `{exp}_{var_type}*.nc`
-   - `outdata/{exp}_{var_type}*.nc`
-   - `output/{exp}_{var_type}*.nc`
+   - `{exp}_{output_stream}*.nc`
+   - `outdata/{exp}_{output_stream}*.nc`
+   - `output/{exp}_{output_stream}*.nc`
 
    If you want to use custom input file patterns for your ICON data, you can
    use the command line option `--path_templates`. For example,
 
    ```bash
-   iconeval path/to/ICON_output --path_templates='["{exp}_*.nc", "my_output/{var_type}_x*.nc"]'
+   iconeval path/to/ICON_output --path_templates='["{exp}_*.nc", "my_output/{output_stream}_x*.nc"]'
    ```
 
    will search for files using the patterns:
 
    - `{exp}_*.nc`
-   - `my_output/{var_type}_x*.nc`
+   - `my_output/{output_stream}_x*.nc`
 
-   `var_type` can be defined in the recipe or as custom [extra
+   `output_stream` can be defined in the recipe or as custom [extra
    facets](https://docs.esmvaltool.org/projects/ESMValCore/en/latest/quickstart/configure.html#extra-facets)
    passed to ICONEval via [custom ESMValTool configuration
    options](customization.md#custom-esmvaltool-configuration). If not given,
@@ -35,7 +35,7 @@
 
    For example, if your output consists of individual files for each variable
    (e.g., `my-icon-run_tas_atm_2d_ml_20200101.nc`), you need to adapt the
-   `var_type` to `var_type: tas_atm_2d_ml`.
+   `output_stream` to `output_stream: tas_atm_2d_ml`.
 
    This can be done by creating a file `my_custom_config_file.yml` in a new
    directory `/path/to/config/dir` with the contents
@@ -48,7 +48,7 @@
          ICON:  # alternatively, ICON-XPP
            '*':
              tas:  # variable name goes here
-               var_type: tas_atm_2d_ml
+               output_stream: tas_atm_2d_ml
    ```
 
    and running ICONEval with
@@ -56,6 +56,21 @@
    ```bash
    iconeval path/to/ICON_output --esmvaltool_options='{"--config_dir": "/path/to/config/dir"}'
    ```
+
+1. ESMValTool fails with `No input data available for years ... in files ...`
+   even though the required years are present in the ICON output files.
+
+   This happens if you explicitly specified a ``--timerange`` when running
+   ICONEval and your ICON output contains multiple years per file.
+
+   To fix this, run ICONEval with the option
+
+   ```bash
+   iconeval path/to/ICON_output --ignore_datetimes_in_filename=True
+   ```
+
+   More details can be found in the corresponding [ESMValCore
+   issue](https://github.com/ESMValGroup/ESMValCore/issues/3208).
 
 1. ESMValTool does not find my variable (e.g., `Unable to load CMOR table
    (project) 'ICON' for variable ...`).
@@ -169,7 +184,7 @@
    an `--html_name`. Please specify a `--html_name` in these cases.
 
 1. My jobs don't start with the error `FATAL: while extracting
-   /work/bd1179/iconeval/0.0.5/esmvaltool/bin/esmvaltool: root filesystem
+   /shared/bd1179/iconeval/0.0.5/esmvaltool/bin/esmvaltool: root filesystem
    extraction failed: failed to copy content in staging file: write
    /tmp/rootfs-3224830439/archive-104220727: no space left on device`.
 
@@ -219,5 +234,7 @@
    This will request all memory (`--mem=0`) of a single compute node
    (`--nodes=1`, `--partition=compute`) with [128 CPUs and 256 GB of main
    memory](https://docs.dkrz.de/doc/levante/configuration.html). Since 1 recipe
-   run = 1 task and 16 CPUs per task are requested, this results in 8 (= 128 /
-   16) recipe runs in parallel.
+   run = 1 task and 16 CPUs per task are requested, this results in 8 (= 128
+   CPUs / 16 CPUs) recipe runs in parallel. This is an optimal setting for the
+   default recipes, which are designed to run effectively on 1/8 of a compute
+   node (16 CPUs, 32 GB of RAM).

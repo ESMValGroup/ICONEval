@@ -99,9 +99,11 @@ preprocessors:
 
   create_monthly_climatology_southern_ocean:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     extract_shape:
       shapefile: ar6
       crop: true
@@ -119,9 +121,11 @@ preprocessors:
 
   create_monthly_climatology_labrador_sea:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     extract_region:
       start_longitude: -67
       end_longitude: -42
@@ -137,9 +141,11 @@ preprocessors:
 
   create_monthly_climatology_weddell_sea:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     extract_region:
       start_longitude: -66
       end_longitude: -16
@@ -168,22 +174,20 @@ diagnostics:
         mip: Omon
         preprocessor: create_monthly_climatology_labrador_sea
         title: Mixed Layer Depth for Labrador Sea
-        additional_datasets: *datasets_cmip6
         supplementary_variables: *supplementary_variables
       mlotst_southern_ocean:
         short_name: mlotst
         mip: Omon
         preprocessor: create_monthly_climatology_southern_ocean
         title: Mixed Layer Depth for Southern Ocean
-        additional_datasets: *datasets_cmip6
         supplementary_variables: *supplementary_variables
       mlotst_weddell_sea:
         short_name: mlotst
         mip: Omon
         preprocessor: create_monthly_climatology_weddell_sea
         title: Mixed Layer Depth for Weddell Sea
-        additional_datasets: *datasets_cmip6
         supplementary_variables: *supplementary_variables
+    additional_datasets: *datasets_cmip6
     scripts:
       plot:
         <<: *plot_script

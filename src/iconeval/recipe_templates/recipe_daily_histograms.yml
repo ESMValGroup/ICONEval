@@ -16,10 +16,16 @@ documentation:
 # YAML anchors for later use
 
 datasets_pr: &datasets_pr
-  - {project: OBS6, dataset: ERA5, type: reanaly, version: "1", tier: 3, timerange: 19990101/20181231}  # 19860101/20181231
+  - {project: OBS6, dataset: ERA5, type: reanaly, version: "1", tier: 3, timerange: 19990101/20181231}  # 19800101/20191231
 
 datasets_tas: &datasets_tas
-  - {project: OBS6, dataset: ERA5, type: reanaly, version: "1", tier: 3, timerange: 19990101/20181231}  # 19800101/20181231
+  - {project: OBS6, dataset: ERA5, type: reanaly, version: "1", tier: 3, timerange: 19990101/20181231}  # 19800101/20201231
+
+supplementary_variables: &supplementary_variables
+  - {short_name: areacella, skip: true}
+  - {short_name: areacello, skip: true}
+  - {short_name: sftlf, skip: true}
+  - {short_name: sftof, skip: true}
 
 
 datasets: "{{dataset_list}}"
@@ -29,10 +35,11 @@ preprocessors:
 
   histogram_pr:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     convert_units:
       units: mm hour-1
     histogram:
@@ -42,10 +49,11 @@ preprocessors:
 
   histogram_tas:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     histogram:
       bins: 300
       bin_range: [180.0, 330.0]
@@ -65,6 +73,7 @@ diagnostics:
         mip: day
         preprocessor: histogram_pr
         additional_datasets: *datasets_pr
+        supplementary_variables: *supplementary_variables
     scripts:
       plot:
         script: plot_histogram.py
@@ -84,6 +93,7 @@ diagnostics:
         mip: day
         preprocessor: histogram_tas
         additional_datasets: *datasets_tas
+        supplementary_variables: *supplementary_variables
     scripts:
       plot:
         script: plot_histogram.py

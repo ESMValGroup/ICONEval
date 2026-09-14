@@ -1,4 +1,3 @@
-# ESMValTool
 #TAGS atmosphere
 #TAGS tuning
 #TAGS precipitation
@@ -309,6 +308,15 @@ datasets_swcre:
   version: 5.12.4
   tier: 3
   timerange: 20020101/20211231
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 plot_script:
   script: monitor/multi_datasets.py
   facet_used_for_labels: alias
@@ -339,6 +347,11 @@ variable_vs_lat_plot:
       zorder: 2.5
       color: C0
     ICON_input:
+      label: '{dataset} ({exp})'
+      linewidth: 1.25
+      zorder: 2.5
+      color: C0
+    input:
       label: '{dataset} ({exp})'
       linewidth: 1.25
       zorder: 2.5
@@ -462,9 +475,11 @@ datasets:
 preprocessors:
   create_zonal_mean:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
-      scheme: linear
       target_grid: 2x2
+      scheme: linear
     zonal_statistics:
       operator: mean
     climate_statistics:
@@ -472,9 +487,11 @@ preprocessors:
       period: full
   create_zonal_mean_pr:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
-      scheme: linear
       target_grid: 2x2
+      scheme: linear
     zonal_statistics:
       operator: mean
     climate_statistics:
@@ -516,6 +533,15 @@ diagnostics:
           version: 5.12.4
           tier: 3
           timerange: 20020101/20211231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       clivi:
         mip: Amon
         preprocessor: create_zonal_mean
@@ -557,6 +583,15 @@ diagnostics:
           version: MYD08-M3
           tier: 3
           timerange: 20030101/20181231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       clt:
         mip: Amon
         preprocessor: create_zonal_mean
@@ -598,6 +633,15 @@ diagnostics:
           version: NOAA
           tier: 2
           timerange: 19970101/20161231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       clwvi:
         mip: Amon
         preprocessor: create_zonal_mean
@@ -639,6 +683,15 @@ diagnostics:
           version: MYD08-M3
           tier: 3
           timerange: 20030101/20181231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       lwcre:
         mip: Amon
         derive: true
@@ -676,6 +729,15 @@ diagnostics:
           version: 5.12.4
           tier: 3
           timerange: 20020101/20211231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       lwp:
         mip: Amon
         derive: true
@@ -718,6 +780,15 @@ diagnostics:
           version: MYD08-M3
           tier: 3
           timerange: 20030101/20181231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       pr:
         mip: Amon
         preprocessor: create_zonal_mean_pr
@@ -737,6 +808,15 @@ diagnostics:
           tier: 2
           reference_for_monitor_diags: true
           timerange: 20030101/20221231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       prw:
         mip: Amon
         preprocessor: create_zonal_mean
@@ -766,6 +846,15 @@ diagnostics:
           version: 5.12.4
           tier: 3
           timerange: 20020101/20211231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       rlut:
         mip: Amon
         preprocessor: create_zonal_mean
@@ -789,10 +878,28 @@ diagnostics:
           version: 5.12.4
           tier: 3
           timerange: 20020101/20211231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       rtmt:
         mip: Amon
         preprocessor: create_zonal_mean
         title: TOA Net Downward Total Radiation
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
       swcre:
         mip: Amon
         derive: true
@@ -824,6 +931,15 @@ diagnostics:
           version: 5.12.4
           tier: 3
           timerange: 20020101/20211231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     additional_datasets:
     - project: CMIP6
       dataset: '*'
@@ -864,6 +980,11 @@ diagnostics:
                 zorder: 2.5
                 color: C0
               ICON_input:
+                label: '{dataset} ({exp})'
+                linewidth: 1.25
+                zorder: 2.5
+                color: C0
+              input:
                 label: '{dataset} ({exp})'
                 linewidth: 1.25
                 zorder: 2.5

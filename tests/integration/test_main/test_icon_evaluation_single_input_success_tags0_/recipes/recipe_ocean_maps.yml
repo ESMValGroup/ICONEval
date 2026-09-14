@@ -1,4 +1,3 @@
-# ESMValTool
 #TAGS ocean
 #TAGS temperature
 #TAGS map
@@ -31,6 +30,15 @@ datasets_tos:
   reference_for_monitor_diags: true
   alias: WOA
   timerange: 20000101/20001231
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 plot_script:
   script: monitor/multi_datasets.py
   facet_used_for_labels: alias
@@ -65,19 +73,21 @@ datasets:
 preprocessors:
   create_map:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     climate_statistics:
       operator: mean
       period: full
   create_map_sos:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     climate_statistics:
       operator: mean
       period: full
@@ -106,6 +116,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: WOA
           timerange: 20000101/20001231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -146,6 +165,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: WOA
           timerange: 20000101/20001231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py

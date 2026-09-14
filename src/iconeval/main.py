@@ -18,7 +18,11 @@ from iconeval._dependencies import (
 from iconeval._logging import configure_logging
 from iconeval._session import Session
 from iconeval.output_handling._summarize import get_html_description, summarize
-from iconeval.output_handling.publish_html import publish_esmvaltool_html
+from iconeval.output_handling.publish_html import (
+    _create_swift_token,
+    _valid_swift_token_available,
+    publish_esmvaltool_html,
+)
 
 if TYPE_CHECKING:
     from collections.abc import Iterable, Sequence
@@ -53,6 +57,7 @@ def icon_evaluation(
     log_file: str | Path | None = "~/.iconeval/debug.log",
     output_dir: str | Path | None = None,
     path_templates: str | Iterable[str] | None = None,
+    ignore_datetimes_in_filename: bool = False,
     account: str | None = None,
     background: bool = False,
     dask: bool = True,
@@ -121,9 +126,14 @@ def icon_evaluation(
         source configuration
         (https://docs.esmvaltool.org/projects/ESMValCore/en/latest/quickstart/
         configure.html#data-sources). By default, uses
-        `["{exp}_{var_type}*.nc", "outdata/{exp}_{var_type}*.nc",
-        "output/{exp}_{var_type}*.nc"] for ICON data and
+        `["{exp}_{output_stream}*.nc", "outdata/{exp}_{output_stream}*.nc",
+        "output/{exp}_{output_stream}*.nc"] for ICON data and
         `["{channel}/{exp}*{channel}{postproc_flag}.nc"]` for EMAC data.
+    ignore_datetimes_in_filename:
+        When determining the time range of an ICON output file, ignore datetime
+        strings in file name. Instead, open the file and read the time range
+        from the time coordinate. This is necessary if the ICON output contains
+        multiple years per file. This option might slow down ESMValTool runs.
     account:
         Account that is charged for the Slurm jobs. By default, use account
         that is used for `sbatch`/`salloc` (if ICONEval is run within `sbatch`
@@ -206,15 +216,13 @@ def icon_evaluation(
     """
     TIMES["start"] = datetime.now(UTC)
 
-    # Initialize tool
     if setup_logging:
         configure_logging(log_level, log_file=log_file)
-    logger.info("Starting ICONEval")
+    logger.debug("Starting ICONEval")
     logger.info(f"ICONEval version: {iconeval.__version__}")
     logger.info(f"Debug log: <cyan>{log_file}</cyan>")
     logger.info("")
 
-    # Log all command line options
     logger.debug("Command line options:")
     logger.debug("---------------------")
     logger.debug(f"{'input_dirs':<35} = {input_dirs}")
@@ -229,6 +237,9 @@ def icon_evaluation(
     logger.debug(f"{'log_file':<35} = {log_file}")
     logger.debug(f"{'output_dir':<35} = {output_dir}")
     logger.debug(f"{'path_templates':<35} = {path_templates}")
+    logger.debug(
+        f"{'ignore_datetimes_in_filename':<35} = {ignore_datetimes_in_filename}",
+    )
     logger.debug(f"{'account':<35} = {account}")
     logger.debug(f"{'background':<35} = {background}")
     logger.debug(f"{'dask':<35} = {dask}")
@@ -255,26 +266,26 @@ def icon_evaluation(
             logger.debug(f"  {key} = {val}")
     logger.debug("")
 
-    # Verify that all dependencies are available
     esmvaltool_executable = str(esmvaltool_executable)
     srun_executable = str(srun_executable)
     verify_esmvaltool_installation(esmvaltool_executable)
     verify_slurm_installation(srun_executable)
+    if publish_html and not _valid_swift_token_available():
+        _create_swift_token()
     logger.debug("")
 
-    # Get default account if necessary
+    # If used within sbatch, the environment variable SLURM_JOB_ACCOUNT points
+    # to the account that is billed for the sbatch job
     if account is None:
         if "SLURM_JOB_ACCOUNT" in os.environ:
             account = os.environ["SLURM_JOB_ACCOUNT"]
         else:
             account = "bd1179"
 
-    # Basic setup of IO directories and files
     TIMES["start_setup"] = datetime.now(UTC)
     session = Session(input_dirs, output_dir, html_name)
     TIMES["end_setup"] = datetime.now(UTC)
 
-    # Setup jobs (i.e., recipes and configuration)
     jobs = session.get_jobs(
         recipe_template_paths=recipe_templates,
         always_use_default_recipe_templates=always_use_default_recipe_templates,
@@ -290,6 +301,7 @@ def icon_evaluation(
         additional_dask_options=dask_options,
         tags=tags,
         path_templates=path_templates,
+        ignore_datetimes_in_filename=ignore_datetimes_in_filename,
         **extra_facets,
     )
     logger.debug("Recipes:")
@@ -298,17 +310,15 @@ def icon_evaluation(
         logger.debug(f"  - {job.recipe.path}")
     logger.debug("")
 
-    # Run jobs
     _run_jobs(jobs, background=background)
     if background:
         TIMES["end"] = datetime.now(UTC)
-        logger.info("Ending ICONEval")
+        logger.debug("Ending ICONEval")
         logger.info(
             f"Time for running ICONEval was {TIMES['end'] - TIMES['start']}",
         )
         return session.output_dir
 
-    # Create summary HTML and publish it if desired
     TIMES["start_html"] = datetime.now(UTC)
     logger.info("HTML output:")
     logger.info("------------")
@@ -321,9 +331,8 @@ def icon_evaluation(
     )
     logger.info("")
 
-    # Print summary
     TIMES["end"] = datetime.now(UTC)
-    logger.info("Ending ICONEval")
+    logger.debug("Ending ICONEval")
     logger.info(
         f"Time for running ICONEval was {TIMES['end'] - TIMES['start']}",
     )

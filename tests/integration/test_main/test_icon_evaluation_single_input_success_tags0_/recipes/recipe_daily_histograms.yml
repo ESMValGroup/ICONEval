@@ -1,4 +1,3 @@
-# ESMValTool
 #DASK --memory_limit=7760MB
 #DASK --n_workers=4
 #TAGS atmosphere
@@ -26,6 +25,15 @@ datasets_tas:
   version: '1'
   tier: 3
   timerange: '*'
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 datasets:
 - supplementary_variables:
   - short_name: areacella
@@ -42,10 +50,11 @@ datasets:
 preprocessors:
   histogram_pr:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     convert_units:
       units: mm hour-1
     histogram:
@@ -56,10 +65,11 @@ preprocessors:
       normalization: integral
   histogram_tas:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     histogram:
       bins: 300
       bin_range:
@@ -84,6 +94,15 @@ diagnostics:
           version: '1'
           tier: 3
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: plot_histogram.py
@@ -108,6 +127,15 @@ diagnostics:
           version: '1'
           tier: 3
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: plot_histogram.py

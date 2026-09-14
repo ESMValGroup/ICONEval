@@ -1,4 +1,3 @@
-# ESMValTool
 #TAGS atmosphere
 #TAGS clouds
 #TAGS annual-cycle
@@ -299,6 +298,11 @@ annual_cycle_plot:
       linewidth: 1.25
       zorder: 2.5
       color: C0
+    input:
+      label: '{dataset} ({exp})'
+      linewidth: 1.25
+      zorder: 2.5
+      color: C0
     ICON_ICON:
       label: '{dataset} ({exp})'
       linewidth: 1.25
@@ -418,6 +422,8 @@ datasets:
 preprocessors:
   create_monthly_climatology_ne_pacific:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -435,6 +441,8 @@ preprocessors:
       period: month
   create_monthly_climatology_se_atlantic:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -452,6 +460,8 @@ preprocessors:
       period: month
   create_monthly_climatology_se_pacific:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
       scheme: linear
@@ -842,6 +852,11 @@ diagnostics:
                 zorder: 2.5
                 color: C0
               ICON_input:
+                label: '{dataset} ({exp})'
+                linewidth: 1.25
+                zorder: 2.5
+                color: C0
+              input:
                 label: '{dataset} ({exp})'
                 linewidth: 1.25
                 zorder: 2.5
@@ -1327,6 +1342,11 @@ diagnostics:
                 linewidth: 1.25
                 zorder: 2.5
                 color: C0
+              input:
+                label: '{dataset} ({exp})'
+                linewidth: 1.25
+                zorder: 2.5
+                color: C0
               ICON_ICON:
                 label: '{dataset} ({exp})'
                 linewidth: 1.25
@@ -1804,6 +1824,11 @@ diagnostics:
                 zorder: 2.5
                 color: C0
               ICON_input:
+                label: '{dataset} ({exp})'
+                linewidth: 1.25
+                zorder: 2.5
+                color: C0
+              input:
                 label: '{dataset} ({exp})'
                 linewidth: 1.25
                 zorder: 2.5

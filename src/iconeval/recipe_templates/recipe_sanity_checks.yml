@@ -14,6 +14,12 @@ documentation:
 
 # YAML anchors for later use
 
+supplementary_variables: &supplementary_variables
+  - {short_name: areacella, skip: true}
+  - {short_name: areacello, skip: true}
+  - {short_name: sftlf, skip: true}
+  - {short_name: sftof, skip: true}
+
 plot_script: &plot_script
   script: monitor/multi_datasets.py
   facet_used_for_labels: legend_label
@@ -69,43 +75,67 @@ preprocessors:
 
   global_mean: &global_mean
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     area_statistics:
       operator: mean
 
   global_mean_pr:
-    <<: *global_mean
+    custom_order: true
+    align_metadata:
+      target_project: OBS6
+    regrid:
+      target_grid: 2x2
+      scheme: area_weighted
+    area_statistics:
+      operator: mean
     convert_units:
       units: mm day-1
 
-  global_min: &global_min
+  global_min:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     area_statistics:
       operator: min
 
   global_min_pr:
-    <<: *global_min
+    custom_order: true
+    align_metadata:
+      target_project: OBS6
+    regrid:
+      target_grid: 2x2
+      scheme: area_weighted
+    area_statistics:
+      operator: min
     convert_units:
       units: mm day-1
 
-  global_max: &global_max
+  global_max:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     area_statistics:
       operator: max
 
   global_max_pr:
-    <<: *global_max
+    custom_order: true
+    align_metadata:
+      target_project: OBS6
+    regrid:
+      target_grid: 2x2
+      scheme: area_weighted
+    area_statistics:
+      operator: max
     convert_units:
       units: mm day-1
 
@@ -121,25 +151,28 @@ diagnostics:
     variables:
       asr_mean:
         short_name: asr
+        mip: Amon
+        derive: true
+        force_derivation: true
         legend_label: global mean
         preprocessor: global_mean
-        derive: true
-        force_derivation: true
-        mip: Amon
+        supplementary_variables: *supplementary_variables
       asr_min:
         short_name: asr
+        mip: Amon
+        derive: true
+        force_derivation: true
         legend_label: global min
         preprocessor: global_min
-        derive: true
-        force_derivation: true
-        mip: Amon
+        supplementary_variables: *supplementary_variables
       asr_max:
         short_name: asr
-        legend_label: global max
-        preprocessor: global_max
+        mip: Amon
         derive: true
         force_derivation: true
-        mip: Amon
+        legend_label: global max
+        preprocessor: global_max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -166,16 +199,19 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       clivi_min:
         short_name: clivi
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       clivi_max:
         short_name: clivi
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -202,16 +238,19 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       clt_min:
         short_name: clt
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       clt_max:
         short_name: clt
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -238,16 +277,19 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       hfls_min:
         short_name: hfls
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       hfls_max:
         short_name: hfls
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -274,16 +316,19 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       hfss_min:
         short_name: hfss
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       hfss_max:
         short_name: hfss
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -312,6 +357,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       lwcre_min:
         short_name: lwcre
         mip: Amon
@@ -319,6 +365,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       lwcre_max:
         short_name: lwcre
         mip: Amon
@@ -326,6 +373,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -354,6 +402,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       lwp_min:
         short_name: lwp
         mip: Amon
@@ -361,6 +410,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       lwp_max:
         short_name: lwp
         mip: Amon
@@ -368,6 +418,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -396,6 +447,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       netcre_min:
         short_name: netcre
         mip: Amon
@@ -403,6 +455,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       netcre_max:
         short_name: netcre
         mip: Amon
@@ -410,6 +463,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -436,16 +490,19 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean_pr
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       pr_min:
         short_name: pr
         mip: Amon
         preprocessor: global_min_pr
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       pr_max:
         short_name: pr
         mip: Amon
         preprocessor: global_max_pr
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -472,16 +529,19 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       prw_min:
         short_name: prw
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       prw_max:
         short_name: prw
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -508,16 +568,19 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       rlut_min:
         short_name: rlut
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       rlut_max:
         short_name: rlut
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -546,6 +609,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       rtnt_min:
         short_name: rtnt
         mip: Amon
@@ -553,6 +617,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       rtnt_max:
         short_name: rtnt
         mip: Amon
@@ -560,6 +625,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -586,16 +652,19 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       rsut_min:
         short_name: rsut
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       rsut_max:
         short_name: rsut
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -624,6 +693,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       swcre_min:
         short_name: swcre
         mip: Amon
@@ -631,6 +701,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       swcre_max:
         short_name: swcre
         mip: Amon
@@ -638,6 +709,7 @@ diagnostics:
         force_derivation: true
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -664,16 +736,19 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       tas_min:
         short_name: tas
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       tas_max:
         short_name: tas
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script
@@ -700,16 +775,19 @@ diagnostics:
         mip: Amon
         preprocessor: global_mean
         legend_label: global mean
+        supplementary_variables: *supplementary_variables
       tauu_min:
         short_name: tauu
         mip: Amon
         preprocessor: global_min
         legend_label: global min
+        supplementary_variables: *supplementary_variables
       tauu_max:
         short_name: tauu
         mip: Amon
         preprocessor: global_max
         legend_label: global max
+        supplementary_variables: *supplementary_variables
     scripts:
       timeseries:
         <<: *plot_script

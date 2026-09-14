@@ -123,9 +123,11 @@ preprocessors:
 
   create_monthly_climatology_nh:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     extract_region:
       start_longitude: 0
       end_longitude: 360
@@ -140,9 +142,11 @@ preprocessors:
 
   create_monthly_climatology_sh:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     extract_region:
       start_longitude: 0
       end_longitude: 360

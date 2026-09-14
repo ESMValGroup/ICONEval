@@ -1,4 +1,3 @@
-# ESMValTool
 #DASK --memory_limit=7760MB
 #DASK --n_workers=4
 #TAGS atmosphere
@@ -19,6 +18,15 @@ datasets_pr:
   frequency: 1hr
   tier: 3
   timerange: '*'
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 datasets:
 - supplementary_variables:
   - short_name: areacella
@@ -35,10 +43,11 @@ datasets:
 preprocessors:
   histogram_tropics:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     extract_region:
       start_longitude: 0
       end_longitude: 360
@@ -74,6 +83,15 @@ diagnostics:
           frequency: 1hr
           tier: 3
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: plot_histogram.py

@@ -226,7 +226,7 @@ class RecipeTemplate(Template):
         )
 
         # Write recipe (incl. magic comments like #ESMVALTOOL)
-        recipe_content: str = "# ESMValTool\n"
+        recipe_content: str = ""
         for dask_key, dask_value in self.dask_options.items():
             recipe_content += f"{self.DASK_OPTIONS_MARKER} --{dask_key}={dask_value}\n"
         for (
@@ -260,13 +260,16 @@ class RecipeTemplate(Template):
     ) -> Any:
         """Fill `{{alias_plot_kwargs}}` appropriately in recipe (in-place)."""
         # Possible aliases are:
+        # -> {dataset}
+        # -> {dataset}_{exp}
+        # -> {exp}
         # -> {project}
-        # -> {project}_{exp}
         # -> {project}_{dataset}
         # -> {project}_{dataset}_{exp}
+        # -> {project}_{exp}
         # These are determined by ESMValTool. For simplicity, we consider all
         # cases here (including dataset-specific facets and common facets).
-        aliases: dict[FacetType, str] = {}  # map alias to color
+        aliases: dict[FacetType, str] = {}  # map alias to format (color, etc.)
         for idx, simulation_info in enumerate(simulations_info):
             exp = simulation_info.guessed_facets["exp"]
             if "project" in extra_facets:
@@ -280,10 +283,13 @@ class RecipeTemplate(Template):
             color = f"C{idx}"
 
             # Avoid duplicates (always use first appearance)
+            aliases.setdefault(dataset, color)
+            aliases.setdefault(f"{dataset}_{exp}", color)
+            aliases.setdefault(exp, color)
             aliases.setdefault(project, color)
-            aliases.setdefault(f"{project}_{exp}", color)
             aliases.setdefault(f"{project}_{dataset}", color)
             aliases.setdefault(f"{project}_{dataset}_{exp}", color)
+            aliases.setdefault(f"{project}_{exp}", color)
 
         # Only replace {{alias_plot_kwargs}} if used as dictionary key
         new_obj: Any
@@ -401,6 +407,7 @@ class ESMValToolConfigTemplate(Template):
         output_dir: Path,
         dask_config: dict[str, Any],
         path_templates: str | Iterable[str] | None,
+        **additional_data_source_options: Any,
     ) -> ESMValToolConfig:
         """Write ESMValTool configuration from template."""
         config_yaml = yaml.safe_load(self.content)
@@ -412,6 +419,7 @@ class ESMValToolConfigTemplate(Template):
             config_yaml,
             simulations_info,
             path_templates=path_templates,
+            **additional_data_source_options,
         )
 
         path.write_text(
@@ -430,7 +438,7 @@ class ESMValToolConfigTemplate(Template):
         self,
         simulations_info: list[SimulationInfo],
         path_templates: Iterable[str],
-        **kwargs: Any,
+        **additional_data_source_options: Any,
     ) -> dict[str, dict[str, Any]]:
         """Get ESMValTool data sources configuration."""
         data_sources: dict[str, Any] = {}
@@ -446,7 +454,7 @@ class ESMValToolConfigTemplate(Template):
                     "filename_template": filename_template,
                     "rootpath": str(simulation_info.path),
                     "type": "esmvalcore.io.local.LocalDataSource",
-                    **kwargs,
+                    **additional_data_source_options,
                 }
         return {"data": data_sources}
 
@@ -456,6 +464,7 @@ class ESMValToolConfigTemplate(Template):
         simulations_info: list[SimulationInfo],
         *,
         path_templates: str | Iterable[str] | None,
+        **additional_data_source_options: Any,
     ) -> dict[str, dict[str, Any]]:
         """Get ESMValTool `projects` configuration."""
         if isinstance(path_templates, str):
@@ -465,13 +474,17 @@ class ESMValToolConfigTemplate(Template):
         # ICON
         if path_templates is None:
             icon_path_templates = [
-                "{exp}_{var_type}*.nc",
-                "outdata/{exp}_{var_type}*.nc",
-                "output/{exp}_{var_type}*.nc",
+                "{exp}_{output_stream}*.nc",
+                "outdata/{exp}_{output_stream}*.nc",
+                "output/{exp}_{output_stream}*.nc",
             ]
         else:
             icon_path_templates = list(path_templates)
-        projects["ICON"] = self._get_data_sources(simulations_info, icon_path_templates)
+        projects["ICON"] = self._get_data_sources(
+            simulations_info,
+            icon_path_templates,
+            **additional_data_source_options,
+        )
 
         # EMAC
         if path_templates is None:
@@ -505,6 +518,7 @@ class ESMValToolConfigTemplate(Template):
             simulations_info,
             emac_path_templates,
             ignore_warnings=ignore_warnings,
+            **additional_data_source_options,
         )
 
         return projects

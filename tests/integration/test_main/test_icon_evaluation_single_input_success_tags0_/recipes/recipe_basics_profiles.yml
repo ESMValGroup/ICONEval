@@ -1,4 +1,3 @@
-# ESMValTool
 #DASK --memory_limit=7760MB
 #DASK --n_workers=4
 #TAGS atmosphere
@@ -41,6 +40,15 @@ datasets_ua:
   reference_for_monitor_diags: true
   alias: ERA5
   timerange: '*'
+supplementary_variables:
+- short_name: areacella
+  skip: true
+- short_name: areacello
+  skip: true
+- short_name: sftlf
+  skip: true
+- short_name: sftof
+  skip: true
 plot_script:
   script: monitor/multi_datasets.py
   facet_used_for_labels: alias
@@ -72,6 +80,8 @@ datasets:
 preprocessors:
   create_zonal_mean_profile:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     extract_levels:
       levels:
         cmor_table: CMIP6
@@ -80,8 +90,7 @@ preprocessors:
       coordinate: air_pressure
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     zonal_statistics:
       operator: mean
     climate_statistics:
@@ -108,6 +117,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: ERA5
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -161,6 +179,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: ERA5
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py
@@ -198,6 +225,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: ERA5
           timerange: '*'
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     scripts:
       plot:
         script: monitor/multi_datasets.py

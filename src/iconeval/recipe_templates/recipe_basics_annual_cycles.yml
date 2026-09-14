@@ -128,9 +128,11 @@ preprocessors:
 
   create_monthly_climatology:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
-      scheme: linear  # some models do not work with ESMFAreaWeighted
       target_grid: 2x2
+      scheme: linear  # some models do not work with area_weighted
     area_statistics:
       operator: mean
     climate_statistics:
@@ -139,9 +141,11 @@ preprocessors:
 
   create_monthly_climatology_pr:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
-      scheme: linear  # some models do not work with ESMFAreaWeighted
       target_grid: 2x2
+      scheme: linear  # some models do not work with area_weighted
     area_statistics:
       operator: mean
     climate_statistics:
@@ -175,19 +179,19 @@ diagnostics:
       pr:
         mip: Amon
         preprocessor: create_monthly_climatology_pr
-        title: Precipitation
+        title: Global Mean Precipitation
         additional_datasets: *datasets_pr
         supplementary_variables: *supplementary_variables
       rlut:
         mip: Amon
         preprocessor: create_monthly_climatology
-        title: TOA Outgoing Longwave Radiation
+        title: Global Mean TOA Outgoing Longwave Radiation
         additional_datasets: *datasets_rlut
         supplementary_variables: *supplementary_variables
       rsdt:
         mip: Amon
         preprocessor: create_monthly_climatology
-        title: TOA Incident Shortwave Radiation
+        title: Global Mean TOA Incident Shortwave Radiation
         additional_datasets: *datasets_rsdt
         supplementary_variables: *supplementary_variables
       rsut:

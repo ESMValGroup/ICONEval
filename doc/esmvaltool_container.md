@@ -11,7 +11,7 @@ HPC systems.
 ## Levante
 
 On Levante, a container image is available at
-`/work/bd1179/esmvaltool/bin/esmvaltool.sif`. It can be run via
+`/shared/bd1179/esmvaltool/bin/esmvaltool.sif`. It can be run via
 
 ```bash
 singularity run -B /work:/work,/scratch:/scratch esmvaltool.sif run /path/to/recipe.yml

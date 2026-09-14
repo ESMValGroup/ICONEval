@@ -44,7 +44,7 @@ To run custom recipes in addition to the default recipes, use
 iconeval path/to/ICON_output --recipe_templates='["/path/to/recipe_1_*.yml", "/path/to/recipe_2.yml"]' --always_use_default_recipe_templates=True
 ```
 
-The default recipes are designed to run effectively on 1/8 of a compute on
+The default recipes are designed to run effectively on 1/8 of a compute node on
 DKRZ's Levante (16 cores, 32 GB of RAM).
 
 The following placeholders are required in the recipe templates:
@@ -139,9 +139,9 @@ By default, ICONEval will search for files using the following patterns:
 
 **ICON**:
 
-- `{exp}_{var_type}*.nc`
-- `outdata/{exp}_{var_type}*.nc`
-- `output/{exp}_{var_type}*.nc`
+- `{exp}_{output_stream}*.nc`
+- `outdata/{exp}_{output_stream}*.nc`
+- `output/{exp}_{output_stream}*.nc`
 
 **EMAC**:
 
@@ -362,6 +362,9 @@ tags using the syntax
   Ignored if `--publish_html=False`.
 - `--log_level`: Log level for ICONEval (default: `info`).
 - `--output_dir`: Output directory for ICONEval (default: `./output_iconeval`).
+- `--ignore_datetimes_in_filename`: Ignore datetimes in filenames when
+  determininig the time range of ICON output files (default: `False`). This is
+  necessary if the ICON output contains multiple years per file.
 - `--background`: Terminate ICONEval after submitting all jobs/job steps
   (default: `False`). Summary HTMLs cannot be published/written in this mode.
 - `--esmvaltool_executable`: Path to ESMValTool executable (default:

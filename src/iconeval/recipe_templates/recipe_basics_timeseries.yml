@@ -118,9 +118,11 @@ preprocessors:
 
   create_global_annual_mean_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     area_statistics:
       operator: mean
     annual_statistics:
@@ -128,9 +130,11 @@ preprocessors:
 
   create_global_annual_mean_time_series_pr:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     area_statistics:
       operator: mean
     annual_statistics:
@@ -175,7 +179,7 @@ diagnostics:
       rsdt:
         mip: Amon
         preprocessor: create_global_annual_mean_time_series
-        title: TOA Incident Shortwave Radiation
+        title: Global Mean TOA Incident Shortwave Radiation
         additional_datasets: *datasets_rsdt
         supplementary_variables: *supplementary_variables
       rsut:

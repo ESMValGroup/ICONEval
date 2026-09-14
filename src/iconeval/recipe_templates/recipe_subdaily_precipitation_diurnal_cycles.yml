@@ -16,7 +16,7 @@ documentation:
 # YAML anchors for later use
 
 datasets_pr: &datasets_pr
-  - {project: native6, dataset: ERA5, alias: ERA5, type: reanaly, version: v1, tier: 3, timerange: 20180101/20201231}  # 19790101/20201231
+  - {project: native6, dataset: ERA5, type: reanaly, version: v1, tier: 3, alias: ERA5, timerange: 20180101/20201231}  # 19790101/20201231
 
 supplementary_variables: &supplementary_variables
   - {short_name: areacella, skip: true}
@@ -85,10 +85,11 @@ preprocessors:
 
   diurnal_cycle_tropics_ocean:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     extract_region:
       start_longitude: 0
       end_longitude: 360
@@ -107,10 +108,11 @@ preprocessors:
 
   diurnal_cycle_tropics_land:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     extract_region:
       start_longitude: 0
       end_longitude: 360
@@ -128,10 +130,11 @@ preprocessors:
 
   diurnal_cycle_north_jja_land:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     extract_region:
       start_longitude: 0
       end_longitude: 360
@@ -151,10 +154,11 @@ preprocessors:
 
   diurnal_cycle_south_djf_land:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     extract_region:
       start_longitude: 0
       end_longitude: 360
@@ -174,10 +178,11 @@ preprocessors:
 
   diurnal_cycle_map_tropics:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme:
-        reference: esmf_regrid.schemes:ESMFAreaWeighted
+      scheme: area_weighted
     extract_region:
       start_latitude: -30
       end_latitude: 30

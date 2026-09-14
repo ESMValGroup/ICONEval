@@ -5,6 +5,12 @@
 To ensure that ICONEval works smoothly, the ICON simulation output should
 follow the subsequent criteria as closely as possible.
 
+An overview of the mapping between CMIP and ICON variable names is given on
+[this website](https://cmiphub.dkrz.de/). For ICON-XPP, click on *Variable
+Mapping*, select project *CMIP7-AFT*, select model *ICON-XPP*, select the
+submodel for the appropriate domain (e.g., *ICON-NWP* for atmospheric
+variables), and click on *Generate*.
+
 ## 2D Variables
 
 2D variables should have the dimensions (*time*, *latitude*, *longitude*).
@@ -70,12 +76,12 @@ follow the subsequent criteria as closely as possible.
 
 The output files should follow one of the following naming conventions:
 
-- `{exp}_{var_type}*.nc`
-- `outdata/{exp}_{var_type}*.nc`
-- `output/{exp}_{var_type}*.nc`
+- `{exp}_{output_stream}*.nc`
+- `outdata/{exp}_{output_stream}*.nc`
+- `output/{exp}_{output_stream}*.nc`
 
 `{exp}` corresponds to the name of your experiment (i.e., the name of your
-output directory), and `{var_type}` to the type of the output variable (see
+output directory), and `{output_stream}` to the type of the output variable (see
 namelist in table above; e.g., `atm_2d_ml`).
 
 If possible, one file should contain one simulated year. Less than that is fine

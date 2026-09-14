@@ -165,9 +165,11 @@ preprocessors:
 
   create_global_annual_mean_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     area_statistics:
       operator: mean
     annual_statistics:
@@ -175,9 +177,11 @@ preprocessors:
 
   create_northatlantic_annual_mean_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     extract_shape:
       shapefile: World_Seas_IHO_v3/World_Seas_IHO_v3.shp
       method: contains
@@ -191,9 +195,11 @@ preprocessors:
 
   create_southernocean_annual_mean_time_series:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     extract_shape:
       shapefile: World_Seas_IHO_v3/World_Seas_IHO_v3.shp
       method: contains

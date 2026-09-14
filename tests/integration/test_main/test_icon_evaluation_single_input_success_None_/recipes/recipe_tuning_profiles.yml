@@ -1,4 +1,3 @@
-# ESMValTool
 #DASK --memory_limit=7760MB
 #DASK --n_workers=4
 #TAGS atmosphere
@@ -77,6 +76,11 @@ plot_script:
       zorder: 2.5
       color: C0
     ICON_input:
+      label: '{dataset} ({exp})'
+      linewidth: 1.25
+      zorder: 2.5
+      color: C0
+    input:
       label: '{dataset} ({exp})'
       linewidth: 1.25
       zorder: 2.5
@@ -209,6 +213,8 @@ datasets:
 preprocessors:
   create_1d_profile_60n:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     extract_levels:
       levels:
         cmor_table: CMIP6
@@ -230,6 +236,8 @@ preprocessors:
       period: full
   create_1d_profile_60s:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     extract_levels:
       levels:
         cmor_table: CMIP6
@@ -251,6 +259,8 @@ preprocessors:
       period: full
   create_zonal_mean_profile:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     extract_levels:
       levels:
         cmor_table: CMIP6
@@ -331,6 +341,11 @@ diagnostics:
                 zorder: 2.5
                 color: C0
               ICON_input:
+                label: '{dataset} ({exp})'
+                linewidth: 1.25
+                zorder: 2.5
+                color: C0
+              input:
                 label: '{dataset} ({exp})'
                 linewidth: 1.25
                 zorder: 2.5
@@ -507,6 +522,11 @@ diagnostics:
                 linewidth: 1.25
                 zorder: 2.5
                 color: C0
+              input:
+                label: '{dataset} ({exp})'
+                linewidth: 1.25
+                zorder: 2.5
+                color: C0
               ICON_ICON:
                 label: '{dataset} ({exp})'
                 linewidth: 1.25
@@ -630,6 +650,15 @@ diagnostics:
           reference_for_monitor_diags: true
           alias: ERA5
           timerange: 20010101/20201231
+        supplementary_variables:
+        - short_name: areacella
+          skip: true
+        - short_name: areacello
+          skip: true
+        - short_name: sftlf
+          skip: true
+        - short_name: sftof
+          skip: true
     additional_datasets:
     - project: CMIP6
       dataset: '*'

@@ -125,13 +125,15 @@ preprocessors:
 
   create_1d_profile_60n:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     extract_levels:
       levels: {cmor_table: CMIP6, coordinate: plev19}
       scheme: linear
       coordinate: air_pressure
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     extract_region:
       start_longitude: 0.
       end_longitude: 360.
@@ -145,13 +147,15 @@ preprocessors:
 
   create_1d_profile_60s:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     extract_levels:
       levels: {cmor_table: CMIP6, coordinate: plev19}
       scheme: linear
       coordinate: air_pressure
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     extract_region:
       start_longitude: 0.
       end_longitude: 360.
@@ -165,13 +169,15 @@ preprocessors:
 
   create_zonal_mean_profile:
     custom_order: true
+    align_metadata:
+      target_project: OBS6
     extract_levels:
       levels: {cmor_table: CMIP6, coordinate: plev19}
       scheme: linear
       coordinate: air_pressure
     regrid:
       target_grid: 2x2
-      scheme: linear  # some models do not work with ESMFAreaWeighted
+      scheme: linear  # some models do not work with area_weighted
     zonal_statistics:
       operator: mean
     climate_statistics:
@@ -235,6 +241,7 @@ diagnostics:
         preprocessor: create_zonal_mean_profile
         title: Air Temperature
         additional_datasets: *datasets_ta
+        supplementary_variables: *supplementary_variables
     additional_datasets: *datasets_cmip6
     scripts:
       plot:
