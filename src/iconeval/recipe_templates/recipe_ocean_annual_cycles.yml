@@ -3,8 +3,14 @@
 ---
 documentation:
   title: Ocean Evaluation (Annual Cycles)
-  description: Annual cycles of ocean variables.
-    (ongoing) model simulations.
+  description: >
+    <p>Annual cycles of ocean variables.</p>
+    <p><i>Note</i></p>
+    <p>Time ranges for the different datasets differ:
+    <ul>
+    <li>{{dataset}}: {{timerange}}</li>
+    <li>CMIP6: 19950101/20141231</li>
+    </ul></p>
   authors:
     - bock_lisa
     - weigel_katja
@@ -17,7 +23,7 @@ defaults_cmip6: &defaults_cmip6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: "{{timerange}}"  # 18500101/20141231
+  timerange: 19950101/20141231  # 18500101/20141231
 
 datasets_cmip6: &datasets_cmip6  # fix list of models to avoid CMOR check error
   - {<<: *defaults_cmip6, dataset: ACCESS-CM2}
