@@ -275,14 +275,14 @@ diagnostics:
         title: Water Vapor Path (North East Pacific; ocean over 15-35N, 140-120W)
         additional_datasets: *datasets_prw
         supplementary_variables: *supplementary_variables
-      swcre:
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: create_monthly_climatology_ne_pacific
-        title: TOA Shortwave Cloud Radiative Effect (North East Pacific; ocean over 15-35N, 140-120W)
-        additional_datasets: *datasets_swcre
-        supplementary_variables: *supplementary_variables
+      # swcre:
+      #   mip: Amon
+      #   derive: true
+      #   force_derivation: true
+      #   preprocessor: create_monthly_climatology_ne_pacific
+      #   title: TOA Shortwave Cloud Radiative Effect (North East Pacific; ocean over 15-35N, 140-120W)
+      #   additional_datasets: *datasets_swcre
+      #   supplementary_variables: *supplementary_variables
     additional_datasets: *datasets_cmip6
     scripts:
       plot:
@@ -337,14 +337,14 @@ diagnostics:
         title: Water Vapor Path (South East Atlantic; ocean over 30-10S, 10W-10E)
         additional_datasets: *datasets_prw
         supplementary_variables: *supplementary_variables
-      swcre:
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: create_monthly_climatology_se_atlantic
-        title: TOA Shortwave Cloud Radiative Effect (South East Atlantic; ocean over 30-10S, 10W-10E)
-        additional_datasets: *datasets_swcre
-        supplementary_variables: *supplementary_variables
+      # swcre:
+      #   mip: Amon
+      #   derive: true
+      #   force_derivation: true
+      #   preprocessor: create_monthly_climatology_se_atlantic
+      #   title: TOA Shortwave Cloud Radiative Effect (South East Atlantic; ocean over 30-10S, 10W-10E)
+      #   additional_datasets: *datasets_swcre
+      #   supplementary_variables: *supplementary_variables
     additional_datasets: *datasets_cmip6
     scripts:
       plot:
@@ -399,14 +399,14 @@ diagnostics:
         title: Water Vapor Path (South East Pacific; ocean over 30-10S, 95-75W)
         additional_datasets: *datasets_prw
         supplementary_variables: *supplementary_variables
-      swcre:
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: create_monthly_climatology_se_pacific
-        title: TOA Shortwave Cloud Radiative Effect (South East Pacific; ocean over 30-10S, 95-75W)
-        additional_datasets: *datasets_swcre
-        supplementary_variables: *supplementary_variables
+      # swcre:
+      #   mip: Amon
+      #   derive: true
+      #   force_derivation: true
+      #   preprocessor: create_monthly_climatology_se_pacific
+      #   title: TOA Shortwave Cloud Radiative Effect (South East Pacific; ocean over 30-10S, 95-75W)
+      #   additional_datasets: *datasets_swcre
+      #   supplementary_variables: *supplementary_variables
     additional_datasets: *datasets_cmip6
     scripts:
       plot:

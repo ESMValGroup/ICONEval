@@ -285,14 +285,14 @@ diagnostics:
         preprocessor: create_zonal_mean
         title: TOA Net Downward Total Radiation
         supplementary_variables: *supplementary_variables
-      swcre:
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: create_zonal_mean
-        title: TOA Shortwave Cloud Radiative Effect
-        additional_datasets: *datasets_swcre
-        supplementary_variables: *supplementary_variables
+      # swcre:
+      #   mip: Amon
+      #   derive: true
+      #   force_derivation: true
+      #   preprocessor: create_zonal_mean
+      #   title: TOA Shortwave Cloud Radiative Effect
+      #   additional_datasets: *datasets_swcre
+      #   supplementary_variables: *supplementary_variables
     additional_datasets: *datasets_cmip6
     scripts:
       plot:

@@ -280,14 +280,14 @@ diagnostics:
         preprocessor: create_global_annual_mean_time_series
         title: Global Mean TOA Net Downward Total Radiation
         supplementary_variables: *supplementary_variables
-      swcre:
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: create_global_annual_mean_time_series
-        title: Global Mean TOA Shortwave Cloud Radiative Effect
-        additional_datasets: *datasets_swcre
-        supplementary_variables: *supplementary_variables
+      # swcre:
+      #   mip: Amon
+      #   derive: true
+      #   force_derivation: true
+      #   preprocessor: create_global_annual_mean_time_series
+      #   title: Global Mean TOA Shortwave Cloud Radiative Effect
+      #   additional_datasets: *datasets_swcre
+      #   supplementary_variables: *supplementary_variables
       tauu_northatlantic:
         short_name: tauu
         mip: Amon

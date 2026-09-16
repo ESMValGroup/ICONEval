@@ -264,24 +264,24 @@ diagnostics:
           map:
             <<: *map_plot
 
-  maps_swcre:
-    description: Map plots of TOA shortwave cloud radiative effect.
-    themes:
-      - clouds
-    realms:
-      - atmos
-    variables:
-      swcre:
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: create_map
-        title: TOA Shortwave Cloud Radiative Effect
-        additional_datasets: *datasets_swcre
-        supplementary_variables: *supplementary_variables
-    scripts:
-      plot:
-        <<: *plot_script
-        plots:
-          map:
-            <<: *map_plot_cre
+  # maps_swcre:
+  #   description: Map plots of TOA shortwave cloud radiative effect.
+  #   themes:
+  #     - clouds
+  #   realms:
+  #     - atmos
+  #   variables:
+  #     swcre:
+  #       mip: Amon
+  #       derive: true
+  #       force_derivation: true
+  #       preprocessor: create_map
+  #       title: TOA Shortwave Cloud Radiative Effect
+  #       additional_datasets: *datasets_swcre
+  #       supplementary_variables: *supplementary_variables
+  #   scripts:
+  #     plot:
+  #       <<: *plot_script
+  #       plots:
+  #         map:
+  #           <<: *map_plot_cre

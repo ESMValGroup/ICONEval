@@ -284,14 +284,14 @@ diagnostics:
         title: Water Vapor Path (Global)
         additional_datasets: *datasets_prw
         supplementary_variables: *supplementary_variables
-      swcre:
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: create_monthly_climatology_global
-        title: TOA Shortwave Cloud Radiative Effect (Global)
-        additional_datasets: *datasets_swcre
-        supplementary_variables: *supplementary_variables
+      # swcre:
+      #   mip: Amon
+      #   derive: true
+      #   force_derivation: true
+      #   preprocessor: create_monthly_climatology_global
+      #   title: TOA Shortwave Cloud Radiative Effect (Global)
+      #   additional_datasets: *datasets_swcre
+      #   supplementary_variables: *supplementary_variables
     additional_datasets: *datasets_cmip6
     scripts:
       plot:
@@ -346,14 +346,14 @@ diagnostics:
         title: Water Vapor Path (Tropics; 30S-30N)
         additional_datasets: *datasets_prw
         supplementary_variables: *supplementary_variables
-      swcre:
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: create_monthly_climatology_tropics
-        title: TOA Shortwave Cloud Radiative Effect (Tropics; 30S-30N)
-        additional_datasets: *datasets_swcre
-        supplementary_variables: *supplementary_variables
+      # swcre:
+      #   mip: Amon
+      #   derive: true
+      #   force_derivation: true
+      #   preprocessor: create_monthly_climatology_tropics
+      #   title: TOA Shortwave Cloud Radiative Effect (Tropics; 30S-30N)
+      #   additional_datasets: *datasets_swcre
+      #   supplementary_variables: *supplementary_variables
     additional_datasets: *datasets_cmip6
     scripts:
       plot:
@@ -408,14 +408,14 @@ diagnostics:
         title: Water Vapor Path (Southern Ocean; 65-30S)
         additional_datasets: *datasets_prw
         supplementary_variables: *supplementary_variables
-      swcre:
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: create_monthly_climatology_southern_ocean
-        title: TOA Shortwave Cloud Radiative Effect (Southern Ocean; 65-30S)
-        additional_datasets: *datasets_swcre
-        supplementary_variables: *supplementary_variables
+      # swcre:
+      #   mip: Amon
+      #   derive: true
+      #   force_derivation: true
+      #   preprocessor: create_monthly_climatology_southern_ocean
+      #   title: TOA Shortwave Cloud Radiative Effect (Southern Ocean; 65-30S)
+      #   additional_datasets: *datasets_swcre
+      #   supplementary_variables: *supplementary_variables
     additional_datasets: *datasets_cmip6
     scripts:
       plot:
@@ -470,14 +470,14 @@ diagnostics:
         title: Water Vapor Path (Storm Tracks; 45-60N)
         additional_datasets: *datasets_prw
         supplementary_variables: *supplementary_variables
-      swcre:
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: create_monthly_climatology_storm_tracks
-        title: TOA Shortwave Cloud Radiative Effect (Storm Tracks; 45-60N)
-        additional_datasets: *datasets_swcre
-        supplementary_variables: *supplementary_variables
+      # swcre:
+      #   mip: Amon
+      #   derive: true
+      #   force_derivation: true
+      #   preprocessor: create_monthly_climatology_storm_tracks
+      #   title: TOA Shortwave Cloud Radiative Effect (Storm Tracks; 45-60N)
+      #   additional_datasets: *datasets_swcre
+      #   supplementary_variables: *supplementary_variables
     additional_datasets: *datasets_cmip6
     scripts:
       plot:

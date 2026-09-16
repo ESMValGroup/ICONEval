@@ -433,50 +433,50 @@ diagnostics:
                 color: C3
                 linewidth: 1.0
 
-  netcre:
-    description: Time series of global min/max/mean including "reasonable" ranges.
-    themes:
-      - phys
-    realms:
-      - atmos
-    variables:
-      netcre_mean:
-        short_name: netcre
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: global_mean
-        legend_label: global mean
-        supplementary_variables: *supplementary_variables
-      netcre_min:
-        short_name: netcre
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: global_min
-        legend_label: global min
-        supplementary_variables: *supplementary_variables
-      netcre_max:
-        short_name: netcre
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: global_max
-        legend_label: global max
-        supplementary_variables: *supplementary_variables
-    scripts:
-      timeseries:
-        <<: *plot_script
-        plots:
-          timeseries:
-            <<: *timeseries_plot
-            hlines:
-              - y: -12.3
-                color: C3
-                linewidth: 1.0
-              - y: -47.1
-                color: C3
-                linewidth: 1.0
+  # netcre:
+  #   description: Time series of global min/max/mean including "reasonable" ranges.
+  #   themes:
+  #     - phys
+  #   realms:
+  #     - atmos
+  #   variables:
+  #     netcre_mean:
+  #       short_name: netcre
+  #       mip: Amon
+  #       derive: true
+  #       force_derivation: true
+  #       preprocessor: global_mean
+  #       legend_label: global mean
+  #       supplementary_variables: *supplementary_variables
+  #     netcre_min:
+  #       short_name: netcre
+  #       mip: Amon
+  #       derive: true
+  #       force_derivation: true
+  #       preprocessor: global_min
+  #       legend_label: global min
+  #       supplementary_variables: *supplementary_variables
+  #     netcre_max:
+  #       short_name: netcre
+  #       mip: Amon
+  #       derive: true
+  #       force_derivation: true
+  #       preprocessor: global_max
+  #       legend_label: global max
+  #       supplementary_variables: *supplementary_variables
+  #   scripts:
+  #     timeseries:
+  #       <<: *plot_script
+  #       plots:
+  #         timeseries:
+  #           <<: *timeseries_plot
+  #           hlines:
+  #             - y: -12.3
+  #               color: C3
+  #               linewidth: 1.0
+  #             - y: -47.1
+  #               color: C3
+  #               linewidth: 1.0
 
   pr:
     description: Time series of global min/max/mean including "reasonable" ranges.
@@ -679,50 +679,50 @@ diagnostics:
                 color: C3
                 linewidth: 1.0
 
-  swcre:
-    description: Time series of global min/max/mean including "reasonable" ranges.
-    themes:
-      - phys
-    realms:
-      - atmos
-    variables:
-      swcre_mean:
-        short_name: swcre
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: global_mean
-        legend_label: global mean
-        supplementary_variables: *supplementary_variables
-      swcre_min:
-        short_name: swcre
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: global_min
-        legend_label: global min
-        supplementary_variables: *supplementary_variables
-      swcre_max:
-        short_name: swcre
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: global_max
-        legend_label: global max
-        supplementary_variables: *supplementary_variables
-    scripts:
-      timeseries:
-        <<: *plot_script
-        plots:
-          timeseries:
-            <<: *timeseries_plot
-            hlines:
-              - y: -40.6
-                color: C3
-                linewidth: 1.0
-              - y: -73.5
-                color: C3
-                linewidth: 1.0
+  # swcre:
+  #   description: Time series of global min/max/mean including "reasonable" ranges.
+  #   themes:
+  #     - phys
+  #   realms:
+  #     - atmos
+  #   variables:
+  #     swcre_mean:
+  #       short_name: swcre
+  #       mip: Amon
+  #       derive: true
+  #       force_derivation: true
+  #       preprocessor: global_mean
+  #       legend_label: global mean
+  #       supplementary_variables: *supplementary_variables
+  #     swcre_min:
+  #       short_name: swcre
+  #       mip: Amon
+  #       derive: true
+  #       force_derivation: true
+  #       preprocessor: global_min
+  #       legend_label: global min
+  #       supplementary_variables: *supplementary_variables
+  #     swcre_max:
+  #       short_name: swcre
+  #       mip: Amon
+  #       derive: true
+  #       force_derivation: true
+  #       preprocessor: global_max
+  #       legend_label: global max
+  #       supplementary_variables: *supplementary_variables
+  #   scripts:
+  #     timeseries:
+  #       <<: *plot_script
+  #       plots:
+  #         timeseries:
+  #           <<: *timeseries_plot
+  #           hlines:
+  #             - y: -40.6
+  #               color: C3
+  #               linewidth: 1.0
+  #             - y: -73.5
+  #               color: C3
+  #               linewidth: 1.0
 
   tas:
     description: Time series of global min/max/mean including "reasonable" ranges.

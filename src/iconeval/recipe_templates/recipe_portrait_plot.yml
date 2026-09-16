@@ -350,26 +350,26 @@ diagnostics:
         variable: rsut
         additional_datasets: *datasets_rsut_ref_1
         supplementary_variables: *supplementary_variables
-      swcre_ref_1:
-        short_name: swcre
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: create_rmse_surface
-        split: ref_1
-        variable: swcre
-        additional_datasets: *datasets_swcre_ref_1
-        supplementary_variables: *supplementary_variables
-      swcre_ref_2:
-        short_name: swcre
-        mip: Amon
-        derive: true
-        force_derivation: true
-        preprocessor: create_rmse_surface
-        split: ref_2
-        variable: swcre
-        additional_datasets: *datasets_swcre_ref_2
-        supplementary_variables: *supplementary_variables
+      # swcre_ref_1:
+      #   short_name: swcre
+      #   mip: Amon
+      #   derive: true
+      #   force_derivation: true
+      #   preprocessor: create_rmse_surface
+      #   split: ref_1
+      #   variable: swcre
+      #   additional_datasets: *datasets_swcre_ref_1
+      #   supplementary_variables: *supplementary_variables
+      # swcre_ref_2:
+      #   short_name: swcre
+      #   mip: Amon
+      #   derive: true
+      #   force_derivation: true
+      #   preprocessor: create_rmse_surface
+      #   split: ref_2
+      #   variable: swcre
+      #   additional_datasets: *datasets_swcre_ref_2
+      #   supplementary_variables: *supplementary_variables
       ta200_ref_1:
         short_name: ta
         mip: Amon
