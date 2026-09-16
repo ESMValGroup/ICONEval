@@ -41,11 +41,11 @@ datasets_cmip6: &datasets_cmip6  # fix list of models to avoid CMOR check error
   - {<<: *defaults_cmip6, dataset: UKESM1-0-LL, ensemble: r1i1p1f2}
 
 datasets_siconc_nh: &datasets_siconc_nh
-  - {project: OBS, dataset: OSI-450-nh, type: reanaly, version: v3, tier: 2, exp: historical, mip: OImon, timerange: 19790101/20201231}  # 19790101/20201231
+  - {project: OBS, dataset: OSI-450-nh, type: reanaly, version: v3, tier: 2, mip: OImon, timerange: 19790101/20201231}  # 19790101/20201231
   - {project: OBS, dataset: HadISST, type: reanaly, version: "1", tier: 2, mip: OImon, timerange: 19790101/20211231}  # 18700101/20211231
 
 datasets_siconc_sh: &datasets_siconc_sh
-  - {project: OBS, dataset: OSI-450-sh, type: reanaly, version: v3, tier: 2, exp: historical, mip: OImon, timerange: 19790101/20201231}  # 19790101/20201231
+  - {project: OBS, dataset: OSI-450-sh, type: reanaly, version: v3, tier: 2, mip: OImon, timerange: 19790101/20201231}  # 19790101/20201231
   - {project: OBS, dataset: HadISST, type: reanaly, version: "1", tier: 2, mip: OImon, timerange: 19790101/20211231}  # 18700101/20211231
   - {project: OBS6, dataset: NSIDC-G02202-sh, type: reanaly, version: "4", tier: 3, timerange: 19790101/20221231}  # 19790101/20221231
 
@@ -97,9 +97,6 @@ timeseries_plot: &timeseries_plot
     OBS6: &obs6_format
       <<: *obs_format
       linestyle: dashdot
-    native6: &native6_format
-      <<: *obs_format
-      linestyle: dotted
     OBS_OSI-450-nh: *obs_format
     OBS_OSI-450-sh: *obs_format
     OBS_HadISST:

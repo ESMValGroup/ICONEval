@@ -135,7 +135,6 @@ datasets_siconc_nh:
   type: reanaly
   version: v3
   tier: 2
-  exp: historical
   mip: OImon
   timerange: 19790101/20201231
 - project: OBS
@@ -151,7 +150,6 @@ datasets_siconc_sh:
   type: reanaly
   version: v3
   tier: 2
-  exp: historical
   mip: OImon
   timerange: 19790101/20201231
 - project: OBS
@@ -245,12 +243,6 @@ timeseries_plot:
       linewidth: 1.0
       zorder: 2.4
       linestyle: dashdot
-    native6:
-      color: black
-      label: '{dataset}'
-      linewidth: 1.0
-      zorder: 2.4
-      linestyle: dotted
     OBS_OSI-450-nh:
       color: black
       label: '{dataset}'
@@ -342,7 +334,6 @@ diagnostics:
           type: reanaly
           version: v3
           tier: 2
-          exp: historical
           mip: OImon
           timerange: 19790101/20201231
         - project: OBS
@@ -372,7 +363,6 @@ diagnostics:
           type: reanaly
           version: v3
           tier: 2
-          exp: historical
           mip: OImon
           timerange: 19790101/20201231
         - project: OBS
@@ -583,12 +573,6 @@ diagnostics:
                 linewidth: 1.0
                 zorder: 2.4
                 linestyle: dashdot
-              native6:
-                color: black
-                label: '{dataset}'
-                linewidth: 1.0
-                zorder: 2.4
-                linestyle: dotted
               OBS_OSI-450-nh:
                 color: black
                 label: '{dataset}'

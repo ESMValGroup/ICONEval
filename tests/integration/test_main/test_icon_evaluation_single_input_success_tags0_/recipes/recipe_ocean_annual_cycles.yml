@@ -3,7 +3,11 @@
 ---
 documentation:
   title: Ocean Evaluation (Annual Cycles)
-  description: Annual cycles of ocean variables. (ongoing) model simulations.
+  description: '<p>Annual cycles of ocean variables.</p> <p><i>Note</i></p> <p>Time
+    ranges for the different datasets differ: <ul> <li>ICON: *</li> <li>CMIP6: 19950101/20141231</li>
+    </ul></p>
+
+    '
   authors:
   - bock_lisa
   - weigel_katja
@@ -12,109 +16,109 @@ defaults_cmip6:
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
 datasets_cmip6:
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: ACCESS-CM2
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: ACCESS-ESM1-5
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: CAMS-CSM1-0
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: CanESM5
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: CESM2-WACCM-FV2
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: CESM2-WACCM
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: CESM2
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: EC-Earth3
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f3
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: HadGEM3-GC31-LL
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: ICON-ESM-LR
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: IPSL-CM6A-LR
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: MIROC6
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: MPI-ESM-1-2-HAM
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: MPI-ESM1-2-HR
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: MPI-ESM1-2-LR
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f1
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: MRI-ESM2-0
 - project: CMIP6
   exp: historical
   ensemble: r1i1p1f2
   grid: gn
-  timerange: '*'
+  timerange: 19950101/20141231
   dataset: UKESM1-0-LL
 supplementary_variables:
 - short_name: areacella
@@ -329,103 +333,103 @@ diagnostics:
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: ACCESS-CM2
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: ACCESS-ESM1-5
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: CAMS-CSM1-0
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: CanESM5
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: CESM2-WACCM-FV2
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: CESM2-WACCM
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: CESM2
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: EC-Earth3
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f3
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: HadGEM3-GC31-LL
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: ICON-ESM-LR
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: IPSL-CM6A-LR
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: MIROC6
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: MPI-ESM-1-2-HAM
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: MPI-ESM1-2-HR
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: MPI-ESM1-2-LR
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f1
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: MRI-ESM2-0
     - project: CMIP6
       exp: historical
       ensemble: r1i1p1f2
       grid: gn
-      timerange: '*'
+      timerange: 19950101/20141231
       dataset: UKESM1-0-LL
     scripts:
       plot:
