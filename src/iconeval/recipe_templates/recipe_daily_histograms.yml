@@ -81,23 +81,3 @@ diagnostics:
         suptitle: Daily Precipitation
         xlabel: Precipitation [mm hour-1]
         ylabel: Density
-
-  plot_histogram_tas:
-    description: Histograms of daily 2-m near surface air temperature.
-    themes:
-      - phys
-    realms:
-      - atmos
-    variables:
-      tas:
-        mip: day
-        preprocessor: histogram_tas
-        additional_datasets: *datasets_tas
-        supplementary_variables: *supplementary_variables
-    scripts:
-      plot:
-        script: plot_histogram.py
-        log_y: true
-        suptitle: Daily Near-Surface Air Temperature
-        xlabel: Near-Surface Air Temperature [K]
-        ylabel: Density
