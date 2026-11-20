@@ -109,7 +109,7 @@ def summarize(
         "atmosphere",
         "ocean",
         "land",
-        "sanity-consistency-checks",
+        "sanity-consistency-check",
     ]
     for realm in realms:
         _write_index_html(
@@ -254,7 +254,7 @@ def _get_index_html_name(realm: RealmType) -> str:
 
 def _get_nice_realm_name(realm: RealmType) -> str:
     """Get nice realm name."""
-    if realm == "sanity-consistency-checks":
+    if realm == "sanity-consistency-check":
         return "Sanity/Consistency"
     return realm.capitalize()
 
@@ -491,7 +491,7 @@ def _write_index_html(
                 {realm_button("atmosphere")}
                 {realm_button("land")}
                 {realm_button("ocean")}
-                {realm_button("sanity-consistency-checks")}
+                {realm_button("sanity-consistency-check")}
             </div>
             <br>
             <div class="row row-cols-1 row-cols-md-3 g-4">

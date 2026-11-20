@@ -14,5 +14,5 @@ type RealmType = Literal[
     "atmosphere",
     "ocean",
     "land",
-    "sanity-consistency-checks",
+    "sanity-consistency-check",
 ]
