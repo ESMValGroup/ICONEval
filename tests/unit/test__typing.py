@@ -22,6 +22,6 @@ def test_realm_type() -> None:
             "atmosphere",
             "ocean",
             "land",
-            "sanity-consistency-checks",
+            "sanity-consistency-check",
         ]
     )
