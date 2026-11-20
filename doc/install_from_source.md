@@ -25,23 +25,23 @@
 
    ```bash
    cd ICONEval
-   pixi install -e esmaltool-dev
+   pixi install -e esmvaltool-dev
    ```
 
 Now you can use
 
 ```bash
-pixi shell -e esmaltool-dev
+pixi shell -e esmvaltool-dev
 ```
 
 to launch a shell in your Pixi environment (this is similar to activating a Conda environment) or
 
 ```bash
-pixi run -e esmaltool-dev ...
+pixi run -e esmvaltool-dev ...
 ```
 
 to run commands in your Pixi environment, e.g.,
 
 ```bash
-pixi run -e esmaltool-dev iconeval path/to/ICON_output --publish_html=True
+pixi run -e esmvaltool-dev iconeval path/to/ICON_output --publish_html=True
 ```
