@@ -1,22 +1,32 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
 # Please see the documentation for all configuration options:
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 
 version: 2
 updates:
-  # Enable version updates for GitHub Actions
   - package-ecosystem: github-actions
-    directory: / # Location of package manifests
+    directory: /
     schedule:
       interval: weekly
     cooldown:
-      default-days: 7  # minimum age of newly released dependency
+      default-days: 7
     groups:
       github-actions:
         patterns:
-          - "*"  # Only one PR per week for all updates
+          - "*"
     labels:
+      - auto pr
       - dependencies
       - github_actions
-      - auto pr
+  - package-ecosystem: pre-commit
+    directory: /
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+    groups:
+      pre-commit:
+        patterns:
+          - "*"
+    labels:
+      - automatedPR
+      - dependencies
