@@ -23,7 +23,7 @@ def _add_console_handler(log_level: str) -> None:
         "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | "
         "<level>{level: <8}</level> |  <level>{message}</level>"
     )
-    logger.add(sys.stdout, level=log_level.upper(), format=format_str, colorize=True)
+    logger.add(sys.stdout, level=log_level.upper(), format=format_str)
 
 
 def _add_file_handler(log_file: str | Path) -> None:
