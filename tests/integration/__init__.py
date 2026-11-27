@@ -37,7 +37,7 @@ class OutputDirRegression:
         # Note: temporary pytest paths are of the form
         # /tmp/pytest-of-{user}/pytest-{run_number}/test_{name-of-test}...
         parent_dirs_that_start_with_test_ = [
-            p for p in obtained_dir.parents if str(p.name).startswith("test_")
+            p for p in obtained_dir.parents if p.name.startswith("test_")
         ]
         tmp_path = (
             None

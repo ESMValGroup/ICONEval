@@ -2,13 +2,13 @@ version: 7
 platforms:
 - name: linux-64
   virtual-packages:
-  - __unix=0=0
+  - __unix=0
   - __linux=4.18
   - __glibc=2.28
   - __archspec=0=x86_64
 - name: osx-arm64
   virtual-packages:
-  - __unix=0=0
+  - __unix=0
   - __osx=13.0
   - __archspec=0=m1
 environments:
@@ -196,6 +196,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pyarrow-core-25.0.0-py315h5fe1983_1_cpu.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pydantic-core-2.50.2-py315h9eb62c9_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pyproj-3.8.0-py315h4eb1998_3.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/pyrefly-1.5.0-hf19af3b_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/python-3.15.2-h6e52b48_100_cp315.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/python-eccodes-2.50.0-np2py315hd46aa36_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/python-stratify-0.4.0-py315hb246bd9_4.conda
@@ -424,6 +425,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/toolz-1.2.0-pyh5ded981_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/traitlets-5.16.1-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/truststore-0.10.5-pyh5ded981_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/types-pyyaml-6.0.12.20261122-pyh5ded981_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/typing-extensions-4.16.0-h69aa097_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/typing-inspection-0.4.4-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/typing_extensions-4.16.0-pyhcf101f3_0.conda
@@ -633,6 +635,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/toolz-1.2.0-pyh5ded981_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/traitlets-5.16.1-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/truststore-0.10.5-pyh5ded981_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/types-pyyaml-6.0.12.20261122-pyh5ded981_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/typing-extensions-4.16.0-h69aa097_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/typing-inspection-0.4.4-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/typing_extensions-4.16.0-pyhcf101f3_0.conda
@@ -815,6 +818,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pyarrow-core-25.0.0-py315h978f751_1_cpu.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pydantic-core-2.50.2-py315hd6777a0_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pyproj-3.8.0-py315h58a7294_3.conda
+      - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pyrefly-1.5.0-ha19a7bb_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/python-3.15.2-h2e4dbab_100_cp315.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/python-eccodes-2.50.0-np2py315h4d829a4_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/python-stratify-0.4.0-py315h374c6dc_4.conda
@@ -1031,6 +1035,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pyarrow-25.0.0-py314hdafbbf9_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pyarrow-core-25.0.0-py314hb474575_1_cpu.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pyproj-3.8.0-py314h08533f4_3.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/pyrefly-1.5.0-hf19af3b_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/python-3.14.10-hcd007b5_100_cp314.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/python-eccodes-2.50.0-np2py314h8874201_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/python-stratify-0.4.0-py314h89acca1_4.conda
@@ -1219,6 +1224,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/toml-0.10.2-pyhcf101f3_3.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/tomli-2.5.0-pyh5ded981_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/toolz-1.2.0-pyh5ded981_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/types-pyyaml-6.0.12.20261122-pyh5ded981_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/typing-extensions-4.16.0-h69aa097_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/typing_extensions-4.16.0-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2026e-h5d301ff_0.conda
@@ -1387,6 +1393,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/toml-0.10.2-pyhcf101f3_3.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/tomli-2.5.0-pyh5ded981_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/toolz-1.2.0-pyh5ded981_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/types-pyyaml-6.0.12.20261122-pyh5ded981_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/typing-extensions-4.16.0-h69aa097_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/typing_extensions-4.16.0-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2026e-h5d301ff_0.conda
@@ -1566,6 +1573,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pyarrow-25.0.0-py314he55896b_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pyarrow-core-25.0.0-py314h7e6a90b_1_cpu.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pyproj-3.8.0-py314h2eba446_3.conda
+      - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pyrefly-1.5.0-ha19a7bb_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/python-3.14.10-h0ae1c2c_100_cp314.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/python-eccodes-2.50.0-np2py314h40f2a13_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/python-stratify-0.4.0-py314hcd3153d_4.conda
@@ -4899,7 +4907,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/cffi?source=compressed-mapping
+  - pkg:pypi/cffi?source=hash-mapping
   run_exports: {}
   size: 307262
   timestamp: 1788485305536
@@ -5114,7 +5122,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/coverage?source=compressed-mapping
+  - pkg:pypi/coverage?source=hash-mapping
   run_exports: {}
   size: 448555
   timestamp: 1793049301371
@@ -5129,7 +5137,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/coverage?source=compressed-mapping
+  - pkg:pypi/coverage?source=hash-mapping
   run_exports: {}
   size: 449527
   timestamp: 1793049301371
@@ -7896,7 +7904,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/msgpack?source=compressed-mapping
+  - pkg:pypi/msgpack?source=hash-mapping
   run_exports: {}
   size: 122174
   timestamp: 1793105660971
@@ -7912,7 +7920,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/msgpack?source=compressed-mapping
+  - pkg:pypi/msgpack?source=hash-mapping
   run_exports: {}
   size: 121833
   timestamp: 1793105661747
@@ -8017,7 +8025,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/multidict?source=compressed-mapping
+  - pkg:pypi/multidict?source=hash-mapping
   run_exports: {}
   size: 283149
   timestamp: 1793017760499
@@ -8547,7 +8555,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/pandas?source=compressed-mapping
+  - pkg:pypi/pandas?source=hash-mapping
   run_exports: {}
   size: 17368926
   timestamp: 1792679036523
@@ -8943,8 +8951,7 @@ packages:
   - python_abi 3.14.* *_cp314
   license: Apache-2.0
   license_family: APACHE
-  purls:
-  - pkg:pypi/pyarrow?source=compressed-mapping
+  purls: []
   run_exports: {}
   size: 26128
   timestamp: 1792228271141
@@ -9030,7 +9037,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pyarrow?source=compressed-mapping
+  - pkg:pypi/pyarrow?source=hash-mapping
   run_exports: {}
   size: 5547388
   timestamp: 1792228214783
@@ -9201,6 +9208,20 @@ packages:
   run_exports: {}
   size: 609604
   timestamp: 1793359586594
+- conda: https://conda.anaconda.org/conda-forge/linux-64/pyrefly-1.5.0-hf19af3b_0.conda
+  sha256: ea8b318155f5d4196af2961cac6e0211281804bf2e2f87cef1b4acad22a7d4d6
+  md5: 4fbb4e75d00ec316b6f06a3c7768e58c
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  - libgcc >=15
+  constrains:
+  - __glibc >=2.17
+  license: MIT
+  license_family: MIT
+  purls: []
+  run_exports: {}
+  size: 14123881
+  timestamp: 1795073537914
 - conda: https://conda.anaconda.org/conda-forge/linux-64/python-3.12.16-h5f976f7_0_cpython.conda
   sha256: a40188b47c3995bc42a33820be4d780af5c11cc295409413fb925549f0abfe92
   md5: bef9f5422e5246840497b4ae3d968001
@@ -10225,7 +10246,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/ukkonen?source=compressed-mapping
+  - pkg:pypi/ukkonen?source=hash-mapping
   run_exports: {}
   size: 17464
   timestamp: 1793037111047
@@ -10242,7 +10263,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/ukkonen?source=compressed-mapping
+  - pkg:pypi/ukkonen?source=hash-mapping
   run_exports: {}
   size: 17411
   timestamp: 1793037115791
@@ -10335,7 +10356,7 @@ packages:
   license: BSD-2-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/wrapt?source=compressed-mapping
+  - pkg:pypi/wrapt?source=hash-mapping
   run_exports: {}
   size: 157827
   timestamp: 1793358807107
@@ -10600,7 +10621,7 @@ packages:
   license: Apache-2.0
   license_family: Apache
   purls:
-  - pkg:pypi/yarl?source=compressed-mapping
+  - pkg:pypi/yarl?source=hash-mapping
   run_exports: {}
   size: 188491
   timestamp: 1791286227840
@@ -10773,8 +10794,7 @@ packages:
   depends:
   - python >=3.14
   license: Python-2.0
-  purls:
-  - pkg:pypi/backports-zstd?source=compressed-mapping
+  purls: []
   run_exports: {}
   size: 7663
   timestamp: 1792690550162
@@ -11099,7 +11119,8 @@ packages:
   - openssl !=1.1.1e
   license: BSD-3-Clause
   license_family: BSD
-  purls: []
+  purls:
+  - pkg:pypi/dask?source=compressed-mapping
   run_exports: {}
   size: 10415
   timestamp: 1787917206356
@@ -11120,7 +11141,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/dask?source=compressed-mapping
+  - pkg:pypi/dask?source=hash-mapping
   run_exports: {}
   size: 1071072
   timestamp: 1787845029550
@@ -11830,7 +11851,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/ipython?source=compressed-mapping
+  - pkg:pypi/ipython?source=hash-mapping
   run_exports: {}
   size: 751282
   timestamp: 1793355091618
@@ -12244,7 +12265,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/nodeenv?source=compressed-mapping
+  - pkg:pypi/nodeenv?source=hash-mapping
   run_exports: {}
   size: 69008
   timestamp: 1793366098195
@@ -12337,7 +12358,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/pip?source=compressed-mapping
+  - pkg:pypi/pip?source=hash-mapping
   run_exports: {}
   size: 1199840
   timestamp: 1792524294936
@@ -12349,7 +12370,7 @@ packages:
   - python
   license: MIT
   purls:
-  - pkg:pypi/platformdirs?source=compressed-mapping
+  - pkg:pypi/platformdirs?source=hash-mapping
   run_exports: {}
   size: 35796
   timestamp: 1793498493176
@@ -12554,7 +12575,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/pydantic?source=compressed-mapping
+  - pkg:pypi/pydantic?source=hash-mapping
   run_exports: {}
   size: 360046
   timestamp: 1793349177574
@@ -12677,7 +12698,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac?source=compressed-mapping
+  - pkg:pypi/pystac?source=hash-mapping
   run_exports: {}
   size: 14430
   timestamp: 1793274512603
@@ -12722,7 +12743,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-classification?source=compressed-mapping
+  - pkg:pypi/pystac-ext-classification?source=hash-mapping
   run_exports: {}
   size: 15356
   timestamp: 1786442459841
@@ -12736,7 +12757,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-datacube?source=compressed-mapping
+  - pkg:pypi/pystac-ext-datacube?source=hash-mapping
   run_exports: {}
   size: 15135
   timestamp: 1786443156017
@@ -12752,7 +12773,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-eo?source=compressed-mapping
+  - pkg:pypi/pystac-ext-eo?source=hash-mapping
   run_exports: {}
   size: 15803
   timestamp: 1786443173854
@@ -12766,7 +12787,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-file?source=compressed-mapping
+  - pkg:pypi/pystac-ext-file?source=hash-mapping
   run_exports: {}
   size: 13956
   timestamp: 1786443154082
@@ -12794,7 +12815,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-item-assets?source=compressed-mapping
+  - pkg:pypi/pystac-ext-item-assets?source=hash-mapping
   run_exports: {}
   size: 11949
   timestamp: 1786442905517
@@ -12808,7 +12829,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-label?source=compressed-mapping
+  - pkg:pypi/pystac-ext-label?source=hash-mapping
   run_exports: {}
   size: 16126
   timestamp: 1786389238851
@@ -12822,7 +12843,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-mgrs?source=compressed-mapping
+  - pkg:pypi/pystac-ext-mgrs?source=hash-mapping
   run_exports: {}
   size: 12316
   timestamp: 1786387300909
@@ -12838,7 +12859,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-mlm?source=compressed-mapping
+  - pkg:pypi/pystac-ext-mlm?source=hash-mapping
   run_exports: {}
   size: 21237
   timestamp: 1786442462729
@@ -12852,7 +12873,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-pointcloud?source=compressed-mapping
+  - pkg:pypi/pystac-ext-pointcloud?source=hash-mapping
   run_exports: {}
   size: 14508
   timestamp: 1786391772575
@@ -12866,7 +12887,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-projection?source=compressed-mapping
+  - pkg:pypi/pystac-ext-projection?source=hash-mapping
   run_exports: {}
   size: 15411
   timestamp: 1786442864330
@@ -12908,7 +12929,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-sar?source=compressed-mapping
+  - pkg:pypi/pystac-ext-sar?source=hash-mapping
   run_exports: {}
   size: 14659
   timestamp: 1786443146885
@@ -12922,7 +12943,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-sat?source=compressed-mapping
+  - pkg:pypi/pystac-ext-sat?source=hash-mapping
   run_exports: {}
   size: 13070
   timestamp: 1786443087822
@@ -12936,7 +12957,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-scientific?source=compressed-mapping
+  - pkg:pypi/pystac-ext-scientific?source=hash-mapping
   run_exports: {}
   size: 13623
   timestamp: 1786442867266
@@ -12950,7 +12971,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-storage?source=compressed-mapping
+  - pkg:pypi/pystac-ext-storage?source=hash-mapping
   run_exports: {}
   size: 15695
   timestamp: 1786442546297
@@ -12964,7 +12985,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-table?source=compressed-mapping
+  - pkg:pypi/pystac-ext-table?source=hash-mapping
   run_exports: {}
   size: 12916
   timestamp: 1786442861020
@@ -12978,7 +12999,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-timestamps?source=compressed-mapping
+  - pkg:pypi/pystac-ext-timestamps?source=hash-mapping
   run_exports: {}
   size: 12748
   timestamp: 1786443708446
@@ -12992,7 +13013,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-version?source=compressed-mapping
+  - pkg:pypi/pystac-ext-version?source=hash-mapping
   run_exports: {}
   size: 13926
   timestamp: 1786391923285
@@ -13006,7 +13027,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/pystac-ext-view?source=compressed-mapping
+  - pkg:pypi/pystac-ext-view?source=hash-mapping
   run_exports: {}
   size: 12978
   timestamp: 1786442636227
@@ -13630,6 +13651,18 @@ packages:
   run_exports: {}
   size: 24467
   timestamp: 1791873594717
+- conda: https://conda.anaconda.org/conda-forge/noarch/types-pyyaml-6.0.12.20261122-pyh5ded981_0.conda
+  sha256: 440ff8c050e9d2382de538dc1285083137a90c97845bdcdda6636065595ce440
+  md5: 6b467455803c6dd0cf17e4975becfa04
+  depends:
+  - python >=3.11
+  - python
+  license: Apache-2.0 AND MIT
+  purls:
+  - pkg:pypi/types-pyyaml?source=hash-mapping
+  run_exports: {}
+  size: 27512
+  timestamp: 1795345142927
 - conda: https://conda.anaconda.org/conda-forge/noarch/typing-extensions-4.16.0-h69aa097_0.conda
   sha256: b141933ece3518f6d7b75dfb59451e2f26b405a44c18e2518a83e9a02e09315c
   md5: c680b5747e8c4c8f23dca0bb7042a8fc
@@ -13686,7 +13719,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/url-normalize?source=compressed-mapping
+  - pkg:pypi/url-normalize?source=hash-mapping
   run_exports: {}
   size: 22931
   timestamp: 1793303821162
@@ -13812,7 +13845,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/xyzservices?source=compressed-mapping
+  - pkg:pypi/xyzservices?source=hash-mapping
   run_exports: {}
   size: 53963
   timestamp: 1788530754725
@@ -14455,7 +14488,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/brotli?source=compressed-mapping
+  - pkg:pypi/brotli?source=hash-mapping
   run_exports: {}
   size: 365416
   timestamp: 1792653793627
@@ -14472,7 +14505,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/brotli?source=compressed-mapping
+  - pkg:pypi/brotli?source=hash-mapping
   run_exports: {}
   size: 364769
   timestamp: 1792653811477
@@ -17363,7 +17396,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/msgpack?source=compressed-mapping
+  - pkg:pypi/msgpack?source=hash-mapping
   run_exports: {}
   size: 107235
   timestamp: 1793105676025
@@ -17378,7 +17411,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/msgpack?source=compressed-mapping
+  - pkg:pypi/msgpack?source=hash-mapping
   run_exports: {}
   size: 106905
   timestamp: 1793105691953
@@ -17448,7 +17481,7 @@ packages:
   license: Apache-2.0
   license_family: APACHE
   purls:
-  - pkg:pypi/multidict?source=compressed-mapping
+  - pkg:pypi/multidict?source=hash-mapping
   run_exports: {}
   size: 251162
   timestamp: 1793014316571
@@ -17615,7 +17648,7 @@ packages:
   license: MIT
   license_family: MIT
   purls:
-  - pkg:pypi/numcodecs?source=compressed-mapping
+  - pkg:pypi/numcodecs?source=hash-mapping
   run_exports: {}
   size: 2047465
   timestamp: 1792548493004
@@ -17719,7 +17752,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/numpy?source=compressed-mapping
+  - pkg:pypi/numpy?source=hash-mapping
   run_exports:
     weak:
     - numpy >=1.25,<3
@@ -17990,7 +18023,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/pandas?source=compressed-mapping
+  - pkg:pypi/pandas?source=hash-mapping
   run_exports: {}
   size: 16276557
   timestamp: 1792679060341
@@ -18611,6 +18644,19 @@ packages:
   run_exports: {}
   size: 532928
   timestamp: 1793359602232
+- conda: https://conda.anaconda.org/conda-forge/osx-arm64/pyrefly-1.5.0-ha19a7bb_0.conda
+  sha256: 77183d1fc7fa9be021b246b99394b9442e5b7a5e9c5dacbee25fb8e6bcec2516
+  md5: c6599db19fdbf67d2b64554f0dc25d32
+  depends:
+  - __osx >=11.0
+  constrains:
+  - __osx >=11.0
+  license: MIT
+  license_family: MIT
+  purls: []
+  run_exports: {}
+  size: 13161891
+  timestamp: 1795073556529
 - conda: https://conda.anaconda.org/conda-forge/osx-arm64/python-3.12.16-hd05a0c4_0_cpython.conda
   sha256: 23d06f02f64e6c768fce624cf369a92544a49e9cee29d3ee6762058474c912c2
   md5: f368ebd7a850ac640059edb82313e86f
@@ -19816,7 +19862,7 @@ packages:
   license: Apache-2.0
   license_family: Apache
   purls:
-  - pkg:pypi/yarl?source=compressed-mapping
+  - pkg:pypi/yarl?source=hash-mapping
   run_exports: {}
   size: 181643
   timestamp: 1791286112728

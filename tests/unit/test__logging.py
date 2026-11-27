@@ -7,6 +7,7 @@ from unittest.mock import call
 import pytest
 
 import iconeval._logging
+import iconeval._session
 from iconeval._session import Session
 
 if TYPE_CHECKING:
