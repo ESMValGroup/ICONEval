@@ -64,6 +64,8 @@ test-py314 = { features = ["esmvaltool", "py314", "test"], solve-group = "py314"
 [tool.pixi.feature.dev.dependencies]
 pre-commit = "*"
 py-markdown-table = "*"
+pyrefly = "*"
+types-PyYAML = "*"
 
 [tool.pixi.feature.esmvaltool.dependencies]
 esmvalcore = ">=2.15.0"
@@ -156,6 +158,14 @@ python = "3.14.*"
 [tool.codespell]
 ignore-words-list = "emac,oce,pres"
 skip = "pixi.lock"
+
+
+[tool.pyrefly]
+project-includes = [
+    "iconeval",
+    "tests",
+]
+search-path = ["."]
 
 
 [tool.pytest.ini_options]
