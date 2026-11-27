@@ -74,7 +74,7 @@ def test_configure_logging(tmp_path: Path, mocker: pytest_mock.MockerFixture) ->
         "<level>{level: <8}</level> |  <level>{message}</level>"
     )
     assert mocked_logging.add.mock_calls == [
-        call(sys.stdout, level="WARNING", format=expected_format_str, colorize=True),
+        call(sys.stdout, level="WARNING", format=expected_format_str),
         call(log_file, level="DEBUG", rotation="500 MB", retention=10),
     ]
 
@@ -92,5 +92,4 @@ def test_configure_logging_no_log_file(mocker: pytest_mock.MockerFixture) -> Non
         sys.stdout,
         level="WARNING",
         format=expected_format_str,
-        colorize=True,
     )
